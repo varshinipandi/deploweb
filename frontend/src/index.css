@@ -2,9 +2,9 @@
 
 @theme {
   /* === Green (Security / Terminal / System) === */
-  --color-cyber-bg: #020d04;
-  --color-cyber-surface: #0a1a0d;
-  --color-cyber-border: #1a3a20;
+  --color-cyber-bg: #060a10;
+  --color-cyber-surface: #0d1117;
+  --color-cyber-border: #1e2a3a;
   --color-cyber-primary: #00ff41;
   --color-cyber-lime: #76ff03;
   --color-cyber-accent: #00e676;
@@ -17,8 +17,8 @@
   /* === Shared === */
   --color-cyber-warning: #ffeb3b;
   --color-cyber-danger: #ef5350;
-  --color-cyber-text: #e8f5e9;
-  --color-cyber-muted: #3a6b45;
+  --color-cyber-text: #f1f5f9;
+  --color-cyber-muted: #64748b;
 
   --font-family-display: 'Orbitron', sans-serif;
   --font-family-body: 'Inter', sans-serif;
@@ -36,8 +36,8 @@ html {
 }
 
 body {
-  background-color: #020d04;
-  color: #e8f5e9;
+  background-color: #060a10;
+  color: #f1f5f9;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
@@ -49,16 +49,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a1a0d;
+  background: #0d1117;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00ff4140;
+  background: linear-gradient(180deg, #00ff4140, #00d4ff40);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00ff4180;
+  background: linear-gradient(180deg, #00ff4180, #00d4ff80);
 }
 
 /* Glow utilities — Green (security) */
@@ -90,16 +90,19 @@ body {
 
 /* Animated gradient border */
 @keyframes borderGlow {
-
-  0%,
-  100% {
-    border-color: rgba(0, 255, 65, 0.5);
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+  0% {
+    border-color: rgba(0, 255, 65, 0.45);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.18);
   }
 
   50% {
-    border-color: rgba(118, 255, 3, 0.5);
-    box-shadow: 0 0 20px rgba(118, 255, 3, 0.2);
+    border-color: rgba(0, 212, 255, 0.45);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.18);
+  }
+
+  100% {
+    border-color: rgba(0, 255, 65, 0.45);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.18);
   }
 }
 
@@ -160,17 +163,17 @@ body {
 
 /* Glassmorphism card */
 .glass-card {
-  background: rgba(10, 26, 13, 0.8);
+  background: rgba(13, 17, 23, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 255, 65, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 212, 255, 0.3);
-  box-shadow: 0 0 30px rgba(0, 255, 65, 0.08), 0 0 60px rgba(0, 212, 255, 0.06);
+  border-color: rgba(0, 212, 255, 0.28);
+  box-shadow: 0 0 24px rgba(0, 255, 65, 0.06), 0 0 48px rgba(0, 212, 255, 0.07);
 }
 
 /* AI-flavored card (blue border) */

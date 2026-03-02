@@ -41,7 +41,7 @@ export default function CertificateGenerator({ eventName, participantName, event
 
         // CyberAI HQ header
         ctx.textAlign = 'center'
-        ctx.fillStyle = '#3a6b45'
+        ctx.fillStyle = '#64748b'
         ctx.font = '13px JetBrains Mono'
         ctx.fillText('CYBERAI HQ', W / 2, 65)
 
@@ -56,7 +56,7 @@ export default function CertificateGenerator({ eventName, participantName, event
         ctx.fillText('CERTIFICATE', W / 2, 115)
         ctx.shadowBlur = 0
         ctx.font = '13px JetBrains Mono'
-        ctx.fillStyle = '#3a6b45'
+        ctx.fillStyle = '#64748b'
         ctx.fillText('OF  PARTICIPATION', W / 2, 138)
 
         // Divider line
@@ -97,7 +97,7 @@ export default function CertificateGenerator({ eventName, participantName, event
 
         // Date
         ctx.font = '11px JetBrains Mono'
-        ctx.fillStyle = '#3a6b45'
+        ctx.fillStyle = '#64748b'
         ctx.fillText(eventDate || new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }), W / 2, 320)
 
         // Bottom divider
@@ -111,7 +111,7 @@ export default function CertificateGenerator({ eventName, participantName, event
 
         // Issued by
         ctx.font = '10px JetBrains Mono'
-        ctx.fillStyle = '#3a6b45'
+        ctx.fillStyle = '#64748b'
         ctx.fillText('Issued by CyberAI HQ · Build. Hack. Secure. Lead.', W / 2, 395)
 
         // Watermark grid dots

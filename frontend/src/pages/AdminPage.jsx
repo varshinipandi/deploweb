@@ -71,7 +71,7 @@ export default function AdminPage() {
         <div style={{ paddingTop: '120px', textAlign: 'center', minHeight: '100vh' }}>
             <Shield size={40} style={{ color: '#ef4444', margin: '0 auto 1rem' }} />
             <h2 style={{ fontFamily: 'Orbitron', color: '#ef4444' }}>Access Denied</h2>
-            <p style={{ color: '#3a6b45' }}>Admin credentials required.</p>
+            <p style={{ color: '#64748b' }}>Admin credentials required.</p>
         </div>
     )
 
@@ -96,7 +96,7 @@ export default function AdminPage() {
                     <h1 style={{ fontFamily: 'Orbitron', fontSize: '1.8rem', fontWeight: 800, color: '#e8f5e9' }}>
                         Admin <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Command Centre</span>
                     </h1>
-                    <p style={{ color: '#3a6b45', fontSize: '0.85rem', marginTop: '0.2rem' }}>
+                    <p style={{ color: '#64748b', fontSize: '0.85rem', marginTop: '0.2rem' }}>
                         Logged in as <span style={{ color: '#00ff41' }}>{user?.name}</span> <span style={{ color: '#f59e0b', fontFamily: 'JetBrains Mono', fontSize: '0.75rem' }}>ADMIN</span>
                     </p>
                 </motion.div>
@@ -105,7 +105,7 @@ export default function AdminPage() {
                 <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
                     {TABS.map(t => (
                         <button key={t} onClick={() => setTab(t)}
-                            style={{ padding: '0.52rem 1.1rem', borderRadius: '7px', border: tab === t ? '1px solid rgba(0,255,65,0.35)' : '1px solid rgba(100,116,139,0.1)', background: tab === t ? 'rgba(0,255,65,0.08)' : 'rgba(0,0,0,0.2)', color: tab === t ? '#00ff41' : '#3a6b45', fontSize: '0.78rem', cursor: 'pointer', fontFamily: 'Orbitron', fontWeight: tab === t ? 700 : 400 }}>
+                            style={{ padding: '0.52rem 1.1rem', borderRadius: '7px', border: tab === t ? '1px solid rgba(0,255,65,0.35)' : '1px solid rgba(100,116,139,0.1)', background: tab === t ? 'rgba(0,255,65,0.08)' : 'rgba(0,0,0,0.2)', color: tab === t ? '#00ff41' : '#64748b', fontSize: '0.78rem', cursor: 'pointer', fontFamily: 'Orbitron', fontWeight: tab === t ? 700 : 400 }}>
                             {t} {t === 'Reports' && reports.filter(r => r.status === 'pending').length > 0 && <span style={{ background: '#ef4444', borderRadius: '50%', width: '14px', height: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.55rem', color: '#fff', marginLeft: '0.3rem' }}>{reports.filter(r => r.status === 'pending').length}</span>}
                         </button>
                     ))}
@@ -123,7 +123,7 @@ export default function AdminPage() {
                                     <s.icon size={18} style={{ color: s.color, marginBottom: '0.6rem' }} />
                                     <div style={{ fontFamily: 'Orbitron', fontSize: '1.8rem', fontWeight: 900, color: s.color }}>{s.value}</div>
                                     <div style={{ fontSize: '0.75rem', color: '#94a3b8', marginTop: '0.15rem' }}>{s.label}</div>
-                                    <div style={{ fontSize: '0.65rem', color: '#3a6b45', marginTop: '0.2rem', fontFamily: 'JetBrains Mono' }}>{s.sub}</div>
+                                    <div style={{ fontSize: '0.65rem', color: '#64748b', marginTop: '0.2rem', fontFamily: 'JetBrains Mono' }}>{s.sub}</div>
                                 </motion.div>
                             ))}
                         </div>
@@ -135,8 +135,8 @@ export default function AdminPage() {
                                 <h3 style={{ fontFamily: 'Orbitron', fontSize: '0.82rem', color: '#00ff41', marginBottom: '1.25rem' }}>7-Day Activity</h3>
                                 <ResponsiveContainer width="100%" height={180}>
                                     <BarChart data={ENGAGEMENT_DATA}>
-                                        <XAxis dataKey="day" tick={{ fill: '#3a6b45', fontSize: 10, fontFamily: 'JetBrains Mono' }} />
-                                        <YAxis tick={{ fill: '#3a6b45', fontSize: 10 }} />
+                                        <XAxis dataKey="day" tick={{ fill: '#64748b', fontSize: 10, fontFamily: 'JetBrains Mono' }} />
+                                        <YAxis tick={{ fill: '#64748b', fontSize: 10 }} />
                                         <Tooltip content={<CustomTooltip />} />
                                         <Bar dataKey="posts" fill="#00ff41" radius={[3, 3, 0, 0]} name="Posts" />
                                         <Bar dataKey="logins" fill="#00d4ff" radius={[3, 3, 0, 0]} name="Logins" />
@@ -168,8 +168,8 @@ export default function AdminPage() {
                             <h3 style={{ fontFamily: 'Orbitron', fontSize: '0.82rem', color: '#00ff41', marginBottom: '1.25rem' }}>Event Registrations (7d)</h3>
                             <ResponsiveContainer width="100%" height={140}>
                                 <LineChart data={ENGAGEMENT_DATA}>
-                                    <XAxis dataKey="day" tick={{ fill: '#3a6b45', fontSize: 10, fontFamily: 'JetBrains Mono' }} />
-                                    <YAxis tick={{ fill: '#3a6b45', fontSize: 10 }} />
+                                    <XAxis dataKey="day" tick={{ fill: '#64748b', fontSize: 10, fontFamily: 'JetBrains Mono' }} />
+                                    <YAxis tick={{ fill: '#64748b', fontSize: 10 }} />
                                     <Tooltip content={<CustomTooltip />} />
                                     <Line type="monotone" dataKey="events" stroke="#00d4ff" strokeWidth={2} dot={{ fill: '#00d4ff', r: 3 }} name="Registrations" />
                                 </LineChart>
@@ -197,7 +197,7 @@ export default function AdminPage() {
                                                 {u.role === 'admin' && <Crown size={11} style={{ color: '#f59e0b' }} />}
                                                 <span style={{ fontSize: '0.6rem', color: statusColor, background: `${statusColor}12`, border: `1px solid ${statusColor}30`, borderRadius: '4px', padding: '0.05rem 0.3rem', fontFamily: 'JetBrains Mono' }}>{u.status}</span>
                                             </div>
-                                            <div style={{ fontSize: '0.65rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginTop: '0.1rem' }}>{u.email} · {u.domain} · {u.posts} posts</div>
+                                            <div style={{ fontSize: '0.65rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginTop: '0.1rem' }}>{u.email} · {u.domain} · {u.posts} posts</div>
                                         </div>
                                         <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
                                             <motion.button whileHover={{ scale: 1.06 }} onClick={() => banUser(u.id)}
@@ -232,7 +232,7 @@ export default function AdminPage() {
                                         <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.6rem' }}>
                                             <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
                                                 <span style={{ fontSize: '0.62rem', color: sevColor, background: `${sevColor}10`, border: `1px solid ${sevColor}25`, borderRadius: '4px', padding: '0.06rem 0.32rem', fontFamily: 'JetBrains Mono' }}>{r.severity}</span>
-                                                <span style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>{r.type} · {r.time}</span>
+                                                <span style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>{r.type} · {r.time}</span>
                                                 {r.status === 'resolved' && <span style={{ fontSize: '0.6rem', color: '#00ff41', background: 'rgba(0,255,65,0.08)', border: '1px solid rgba(0,255,65,0.2)', borderRadius: '4px', padding: '0.06rem 0.32rem', fontFamily: 'JetBrains Mono' }}>✅ Resolved</span>}
                                             </div>
                                             {r.status === 'pending' && (
@@ -249,7 +249,7 @@ export default function AdminPage() {
                                             )}
                                         </div>
                                         <p style={{ fontSize: '0.82rem', color: '#94a3b8', marginBottom: '0.5rem' }}>{r.content}</p>
-                                        <div style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>
+                                        <div style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>
                                             Reported by <span style={{ color: '#00ff41' }}>{r.reporter}</span> → <span style={{ color: '#ef4444' }}>{r.reported}</span>
                                         </div>
                                     </motion.div>
@@ -263,14 +263,14 @@ export default function AdminPage() {
                 {tab === 'Resources' && (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                         <h3 style={{ fontFamily: 'Orbitron', fontSize: '0.9rem', color: '#00d4ff', marginBottom: '1rem' }}>Pending Resource Submissions</h3>
-                        {resources.length === 0 && <p style={{ color: '#3a6b45', fontSize: '0.85rem', fontFamily: 'JetBrains Mono' }}>✅ No pending submissions</p>}
+                        {resources.length === 0 && <p style={{ color: '#64748b', fontSize: '0.85rem', fontFamily: 'JetBrains Mono' }}>✅ No pending submissions</p>}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                             {resources.map((r, i) => (
                                 <motion.div key={r.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.06 }}
                                     style={{ background: 'rgba(5,18,8,0.85)', border: '1px solid rgba(245,158,11,0.15)', borderRadius: '10px', padding: '1.1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                                     <div>
                                         <div style={{ fontWeight: 600, color: '#e8f5e9', fontSize: '0.85rem', marginBottom: '0.2rem' }}>{r.title}</div>
-                                        <div style={{ fontSize: '0.65rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>{r.type} · by {r.submittedBy}</div>
+                                        <div style={{ fontSize: '0.65rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>{r.type} · by {r.submittedBy}</div>
                                     </div>
                                     <div style={{ display: 'flex', gap: '0.4rem' }}>
                                         <motion.button whileHover={{ scale: 1.06 }} onClick={() => approveResource(r.id, true)}
@@ -294,7 +294,7 @@ export default function AdminPage() {
                         <h3 style={{ fontFamily: 'Orbitron', fontSize: '0.9rem', color: '#f59e0b', marginBottom: '1rem' }}>Push Site-Wide Announcement</h3>
                         <div style={{ background: 'rgba(245,158,11,0.04)', border: '1px solid rgba(245,158,11,0.15)', borderRadius: '12px', padding: '1.5rem' }}>
                             <div style={{ height: '2px', background: 'linear-gradient(90deg,#f59e0b,transparent)', marginTop: '-1.5rem', marginLeft: '-1.5rem', marginRight: '-1.5rem', marginBottom: '1.5rem' }} />
-                            <label style={{ fontSize: '0.7rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>ANNOUNCEMENT MESSAGE</label>
+                            <label style={{ fontSize: '0.7rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>ANNOUNCEMENT MESSAGE</label>
                             <textarea className="cyber-input" value={announcement} onChange={e => setAnnouncement(e.target.value)} placeholder="e.g. 🚨 Server maintenance at 2:00 AM IST · New CTF event live now!" style={{ minHeight: '100px', resize: 'vertical', fontFamily: 'Inter', marginBottom: '1rem', borderColor: 'rgba(245,158,11,0.2)' }} />
                             <div style={{ display: 'flex', gap: '0.75rem' }}>
                                 <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={() => { if (announcement.trim()) { setActiveAnn(announcement); setAnnouncement('') } }}

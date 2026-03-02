@@ -131,7 +131,7 @@ export default function LeaderboardPage() {
                             <Zap size={14} style={{ color: G }} /> Daily XP Bonus Wheel
                             {bonusPts > 0 && <span style={{ fontSize: '0.68rem', color: G, fontFamily: 'JetBrains Mono' }}>+{bonusPts} pts today</span>}
                         </span>
-                        {spinOpen ? <ChevronUp size={14} style={{ color: '#3a6b45' }} /> : <ChevronDown size={14} style={{ color: '#3a6b45' }} />}
+                        {spinOpen ? <ChevronUp size={14} style={{ color: '#64748b' }} /> : <ChevronDown size={14} style={{ color: '#64748b' }} />}
                     </button>
                     <AnimatePresence>
                         {spinOpen && (
@@ -150,7 +150,7 @@ export default function LeaderboardPage() {
                             <h1 style={{ fontFamily: 'Orbitron', fontSize: '1.75rem', fontWeight: 900, color: '#e8f5e9', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                                 <Trophy size={28} style={{ color: A }} /> Global <span style={{ background: `linear-gradient(135deg,${G},${B})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Leaderboard</span>
                             </h1>
-                            <p style={{ fontSize: '0.78rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginTop: '0.2rem' }}>Domain-Aware · Streak-Powered · Real-Time</p>
+                            <p style={{ fontSize: '0.78rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginTop: '0.2rem' }}>Domain-Aware · Streak-Powered · Real-Time</p>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                             <Wifi size={10} style={{ color: G }} />
@@ -167,7 +167,7 @@ export default function LeaderboardPage() {
                     <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.75rem' }}>
                         {SEASONS.map(s => (
                             <button key={s} onClick={() => setSeason(s)}
-                                style={{ padding: '0.32rem 0.7rem', borderRadius: '6px', border: season === s ? `1px solid ${B}40` : '1px solid rgba(100,116,139,0.1)', background: season === s ? `${B}0d` : 'rgba(0,0,0,0.2)', color: season === s ? B : '#3a6b45', fontSize: '0.7rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                style={{ padding: '0.32rem 0.7rem', borderRadius: '6px', border: season === s ? `1px solid ${B}40` : '1px solid rgba(100,116,139,0.1)', background: season === s ? `${B}0d` : 'rgba(0,0,0,0.2)', color: season === s ? B : '#64748b', fontSize: '0.7rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                 {s}
                             </button>
                         ))}
@@ -178,7 +178,7 @@ export default function LeaderboardPage() {
                 <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
                     {TABS.map(t => (
                         <button key={t} onClick={() => setTab(t)}
-                            style={{ padding: '0.5rem 1rem', borderRadius: '7px', border: tab === t ? `1px solid ${G}35` : '1px solid rgba(100,116,139,0.08)', background: tab === t ? `${G}09` : 'rgba(0,0,0,0.2)', color: tab === t ? G : '#3a6b45', fontSize: '0.78rem', cursor: 'pointer', fontFamily: 'Orbitron', fontWeight: tab === t ? 700 : 400 }}>
+                            style={{ padding: '0.5rem 1rem', borderRadius: '7px', border: tab === t ? `1px solid ${G}35` : '1px solid rgba(100,116,139,0.08)', background: tab === t ? `${G}09` : 'rgba(0,0,0,0.2)', color: tab === t ? G : '#64748b', fontSize: '0.78rem', cursor: 'pointer', fontFamily: 'Orbitron', fontWeight: tab === t ? 700 : 400 }}>
                             {t}
                         </button>
                     ))}
@@ -214,7 +214,7 @@ export default function LeaderboardPage() {
                                             {e.av}
                                         </div>
                                         <div style={{ fontFamily: 'Orbitron', fontSize: '0.82rem', fontWeight: 700, color: '#e8f5e9', marginBottom: '0.15rem' }}>{e.name}</div>
-                                        <div style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginBottom: '0.5rem' }}>{e.domain}</div>
+                                        <div style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginBottom: '0.5rem' }}>{e.domain}</div>
                                         <div style={{ fontFamily: 'Orbitron', fontSize: '1.3rem', fontWeight: 900, color: tier.color }}>{e.score.toLocaleString()}</div>
                                         <div style={{ display: 'flex', gap: '0.3rem', justifyContent: 'center', marginTop: '0.4rem', flexWrap: 'wrap' }}>
                                             <span style={{ fontSize: '0.58rem', color: G, background: `${G}10`, border: `1px solid ${G}25`, borderRadius: '4px', padding: '0.05rem 0.3rem', fontFamily: 'JetBrains Mono' }}>🔥{e.streak}d</span>
@@ -235,10 +235,10 @@ export default function LeaderboardPage() {
                                     <motion.div key={e.id} initial={{ opacity: 0, x: -15 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.05 }}
                                         style={{ background: 'rgba(5,15,10,0.85)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '10px', overflow: 'hidden' }}>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.85rem 1.1rem', cursor: 'pointer' }} onClick={() => setExpanded(open ? null : e.id)}>
-                                            <div style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: '#3a6b45', minWidth: '24px', textAlign: 'center' }}>#{rank}</div>
+                                            <div style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: '#64748b', minWidth: '24px', textAlign: 'center' }}>#{rank}</div>
                                             <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: `linear-gradient(135deg,${dc.from},${dc.to})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.68rem', fontWeight: 700, color: '#020d04', flexShrink: 0 }}>{e.av}</div>
                                             <div style={{ flex: 1, minWidth: 0 }}>
-                                                <div style={{ fontWeight: 600, color: '#e8f5e9', fontSize: '0.85rem' }}>{e.name} <span style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>{e.domain}</span></div>
+                                                <div style={{ fontWeight: 600, color: '#e8f5e9', fontSize: '0.85rem' }}>{e.name} <span style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>{e.domain}</span></div>
                                                 <div style={{ display: 'flex', gap: '0.3rem', marginTop: '0.2rem', flexWrap: 'wrap' }}>
                                                     <span style={{ fontSize: '0.6rem', color: G, fontFamily: 'JetBrains Mono' }}>🔥 {e.streak}d streak</span>
                                                     <span style={{ fontSize: '0.6rem', color: getMultiplierColor(e.streak), fontFamily: 'JetBrains Mono' }}>{mul} mult</span>
@@ -247,7 +247,7 @@ export default function LeaderboardPage() {
                                             </div>
                                             <div style={{ fontFamily: 'Orbitron', fontSize: '1rem', fontWeight: 900, color: tier.color }}>{e.score.toLocaleString()}</div>
                                             <div style={{ fontSize: '0.75rem' }}>{tier.icon}</div>
-                                            {open ? <ChevronUp size={13} style={{ color: '#3a6b45' }} /> : <ChevronDown size={13} style={{ color: '#3a6b45' }} />}
+                                            {open ? <ChevronUp size={13} style={{ color: '#64748b' }} /> : <ChevronDown size={13} style={{ color: '#64748b' }} />}
                                         </div>
                                         <AnimatePresence>
                                             {open && (
@@ -262,7 +262,7 @@ export default function LeaderboardPage() {
                                                             { label: 'Active Challenge', val: e.challenge || '—', c: A },
                                                         ].map(({ label, val, c }) => (
                                                             <div key={label} style={{ background: 'rgba(0,0,0,0.25)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: '7px', padding: '0.5rem 0.65rem' }}>
-                                                                <div style={{ fontSize: '0.58rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginBottom: '0.2rem' }}>{label}</div>
+                                                                <div style={{ fontSize: '0.58rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginBottom: '0.2rem' }}>{label}</div>
                                                                 <div style={{ fontSize: '0.82rem', fontWeight: 700, color: c, fontFamily: 'Orbitron' }}>{val}</div>
                                                             </div>
                                                         ))}
@@ -284,14 +284,14 @@ export default function LeaderboardPage() {
                         <div style={{ padding: '0.75rem 1.1rem', background: `${dCol}0a`, border: `1px solid ${dCol}20`, borderRadius: '10px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                             <Target size={15} style={{ color: dCol }} />
                             <span style={{ fontFamily: 'JetBrains Mono', fontSize: '0.78rem', color: dCol }}>Showing challenges for domain: <strong>{myDomain}</strong></span>
-                            <span style={{ marginLeft: 'auto', fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>Domain XP tasks highlighted</span>
+                            <span style={{ marginLeft: 'auto', fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>Domain XP tasks highlighted</span>
                         </div>
 
                         {/* Daily */}
                         <div style={{ marginBottom: '1.5rem' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
                                 <CalendarDays size={15} style={{ color: G }} /><h3 style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: G }}>Daily Tasks</h3>
-                                <span style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginLeft: 'auto' }}>Resets midnight IST</span>
+                                <span style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginLeft: 'auto' }}>Resets midnight IST</span>
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                 {daily.map(t => {
@@ -304,13 +304,13 @@ export default function LeaderboardPage() {
                                                 {t.done && <CheckCircle size={12} />}
                                             </motion.button>
                                             <div style={{ flex: 1 }}>
-                                                <div style={{ fontSize: '0.82rem', color: t.done ? '#3a6b45' : '#e8f5e9', textDecoration: t.done ? 'line-through' : 'none' }}>{t.title}</div>
+                                                <div style={{ fontSize: '0.82rem', color: t.done ? '#64748b' : '#e8f5e9', textDecoration: t.done ? 'line-through' : 'none' }}>{t.title}</div>
                                                 <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.15rem' }}>
-                                                    <span style={{ fontSize: '0.6rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'flex', alignItems: 'center', gap: '0.2rem' }}><Clock size={8} />{t.deadline}</span>
+                                                    <span style={{ fontSize: '0.6rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'flex', alignItems: 'center', gap: '0.2rem' }}><Clock size={8} />{t.deadline}</span>
                                                     {t.domain !== 'all' && <span style={{ fontSize: '0.6rem', color: dCol, background: `${dCol}10`, borderRadius: '3px', padding: '0.02rem 0.25rem', fontFamily: 'JetBrains Mono' }}>{t.domain}</span>}
                                                 </div>
                                             </div>
-                                            <span style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: t.done ? '#3a6b45' : G }}>+{t.pts} XP</span>
+                                            <span style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: t.done ? '#64748b' : G }}>+{t.pts} XP</span>
                                         </motion.div>
                                     )
                                 })}
@@ -321,7 +321,7 @@ export default function LeaderboardPage() {
                         <div style={{ marginBottom: '1.5rem' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
                                 <Star size={15} style={{ color: B }} /><h3 style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: B }}>Weekly Tasks</h3>
-                                <span style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginLeft: 'auto' }}>+50 XP each</span>
+                                <span style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginLeft: 'auto' }}>+50 XP each</span>
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                 {weekly.map(t => {
@@ -334,13 +334,13 @@ export default function LeaderboardPage() {
                                                 {t.done && <CheckCircle size={12} />}
                                             </motion.button>
                                             <div style={{ flex: 1 }}>
-                                                <div style={{ fontSize: '0.82rem', color: t.done ? '#3a6b45' : '#e8f5e9', textDecoration: t.done ? 'line-through' : 'none' }}>{t.title}</div>
+                                                <div style={{ fontSize: '0.82rem', color: t.done ? '#64748b' : '#e8f5e9', textDecoration: t.done ? 'line-through' : 'none' }}>{t.title}</div>
                                                 <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.15rem' }}>
-                                                    <span style={{ fontSize: '0.6rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'flex', alignItems: 'center', gap: '0.2rem' }}><Clock size={8} />{t.deadline}</span>
+                                                    <span style={{ fontSize: '0.6rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'flex', alignItems: 'center', gap: '0.2rem' }}><Clock size={8} />{t.deadline}</span>
                                                     <span style={{ fontSize: '0.6rem', color: B, background: `${B}10`, borderRadius: '3px', padding: '0.02rem 0.25rem', fontFamily: 'JetBrains Mono' }}>{t.domain}</span>
                                                 </div>
                                             </div>
-                                            <span style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: t.done ? '#3a6b45' : B }}>+50 XP</span>
+                                            <span style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: t.done ? '#64748b' : B }}>+50 XP</span>
                                         </motion.div>
                                     )
                                 })}
@@ -351,7 +351,7 @@ export default function LeaderboardPage() {
                         <div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
                                 <BarChart2 size={15} style={{ color: '#a78bfa' }} /><h3 style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: '#a78bfa' }}>Monthly Challenges</h3>
-                                <span style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginLeft: 'auto' }}>150–300 XP · March 2026</span>
+                                <span style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginLeft: 'auto' }}>150–300 XP · March 2026</span>
                             </div>
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '0.75rem' }}>
                                 {monthly.map(t => {
@@ -366,7 +366,7 @@ export default function LeaderboardPage() {
                                             </div>
                                             <p style={{ fontSize: '0.82rem', color: '#e8f5e9', marginBottom: '0.5rem', lineHeight: 1.4 }}>{t.title}</p>
                                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                                <span style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'flex', alignItems: 'center', gap: '0.25rem' }}><Clock size={9} />Ends {t.deadline}</span>
+                                                <span style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'flex', alignItems: 'center', gap: '0.25rem' }}><Clock size={9} />Ends {t.deadline}</span>
                                                 <motion.button whileHover={{ scale: 1.05 }} onClick={() => completeTask(monthly, setMonthly, t.id)} disabled={t.done}
                                                     style={{ padding: '0.28rem 0.65rem', background: t.done ? `${G}10` : 'rgba(167,139,250,0.08)', border: t.done ? `1px solid ${G}25` : '1px solid rgba(167,139,250,0.25)', borderRadius: '5px', color: t.done ? G : '#a78bfa', fontSize: '0.65rem', cursor: t.done ? 'default' : 'pointer', fontFamily: 'JetBrains Mono' }}>
                                                     {t.done ? '✅ Done' : 'Mark Complete'}
@@ -392,17 +392,17 @@ export default function LeaderboardPage() {
                                     <span style={{ fontFamily: 'Orbitron', fontSize: '0.82rem', fontWeight: 700, color: G }}>STREAK ENGINE</span>
                                 </div>
                                 <div style={{ fontFamily: 'Orbitron', fontSize: '3rem', fontWeight: 900, color: G, lineHeight: 1 }}>{myStreak}</div>
-                                <div style={{ fontSize: '0.72rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginBottom: '1rem' }}>consecutive days</div>
+                                <div style={{ fontSize: '0.72rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginBottom: '1rem' }}>consecutive days</div>
                                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
                                     {[[7, '1.5× multiplier', A], [30, '2× multiplier', '#a78bfa']].map(([d, label, c]) => (
                                         <div key={d} style={{ flex: 1, padding: '0.5rem', background: myStreak >= d ? `${c}10` : 'rgba(0,0,0,0.2)', border: `1px solid ${myStreak >= d ? c + '40' : 'rgba(255,255,255,0.05)'}`, borderRadius: '7px', textAlign: 'center' }}>
-                                            <div style={{ fontSize: '0.65rem', color: myStreak >= d ? c : '#3a6b45', fontFamily: 'JetBrains Mono' }}>{d}+ days</div>
-                                            <div style={{ fontSize: '0.72rem', color: myStreak >= d ? c : '#3a6b45', fontWeight: 700 }}>{label}</div>
+                                            <div style={{ fontSize: '0.65rem', color: myStreak >= d ? c : '#64748b', fontFamily: 'JetBrains Mono' }}>{d}+ days</div>
+                                            <div style={{ fontSize: '0.72rem', color: myStreak >= d ? c : '#64748b', fontWeight: 700 }}>{label}</div>
                                             {myStreak >= d && <div style={{ fontSize: '0.6rem', color: c, fontFamily: 'JetBrains Mono' }}>✓ ACTIVE</div>}
                                         </div>
                                     ))}
                                 </div>
-                                <div style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', padding: '0.4rem 0.6rem', background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.12)', borderRadius: '5px' }}>
+                                <div style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono', padding: '0.4rem 0.6rem', background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.12)', borderRadius: '5px' }}>
                                     ⚠ Streak resets after <span style={{ color: '#ef4444' }}>3 missed days</span>
                                 </div>
                             </div>
@@ -416,8 +416,8 @@ export default function LeaderboardPage() {
                                 </div>
                                 {enrolled ? (
                                     <div>
-                                        <div style={{ fontFamily: 'Orbitron', fontSize: '1.6rem', fontWeight: 900, color: B }}>{myDay}<span style={{ fontSize: '0.9rem', color: '#3a6b45' }}> / {enrolled === '60-Day' ? 60 : 100}</span></div>
-                                        <div style={{ fontSize: '0.72rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginBottom: '0.75rem' }}>{enrolled} · day {myDay}</div>
+                                        <div style={{ fontFamily: 'Orbitron', fontSize: '1.6rem', fontWeight: 900, color: B }}>{myDay}<span style={{ fontSize: '0.9rem', color: '#64748b' }}> / {enrolled === '60-Day' ? 60 : 100}</span></div>
+                                        <div style={{ fontSize: '0.72rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginBottom: '0.75rem' }}>{enrolled} · day {myDay}</div>
                                         {/* Progress bar */}
                                         <div style={{ height: '6px', background: 'rgba(0,0,0,0.4)', borderRadius: '3px', marginBottom: '0.75rem', overflow: 'hidden' }}>
                                             <motion.div initial={{ width: 0 }} animate={{ width: `${(myDay / (enrolled === '60-Day' ? 60 : 100)) * 100}%` }} transition={{ duration: 1.5, ease: 'easeOut' }}
@@ -426,7 +426,7 @@ export default function LeaderboardPage() {
                                         <div style={{ fontSize: '0.75rem', color: '#e8f5e9', marginBottom: '0.75rem' }}>Today's task: <span style={{ color: B, fontFamily: 'JetBrains Mono' }}>{DOMAINS[myDomain].tasks[myDay % 5]}</span></div>
                                         <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} disabled={todayDone}
                                             onClick={() => { setTodayDone(true); setMyStreak(s => s + 1); setMyDay(d => d + 1) }}
-                                            style={{ width: '100%', padding: '0.6rem', background: todayDone ? 'rgba(0,0,0,0.2)' : `linear-gradient(135deg,${G},${B})`, border: todayDone ? `1px solid ${G}20` : 'none', borderRadius: '7px', color: todayDone ? '#3a6b45' : '#020d04', fontFamily: 'Orbitron', fontWeight: 700, fontSize: '0.78rem', cursor: todayDone ? 'default' : 'pointer' }}>
+                                            style={{ width: '100%', padding: '0.6rem', background: todayDone ? 'rgba(0,0,0,0.2)' : `linear-gradient(135deg,${G},${B})`, border: todayDone ? `1px solid ${G}20` : 'none', borderRadius: '7px', color: todayDone ? '#64748b' : '#020d04', fontFamily: 'Orbitron', fontWeight: 700, fontSize: '0.78rem', cursor: todayDone ? 'default' : 'pointer' }}>
                                             {todayDone ? '✅ Done for today' : 'Mark Day Complete +10 XP'}
                                         </motion.button>
                                     </div>
@@ -440,9 +440,9 @@ export default function LeaderboardPage() {
                                                     style={{ padding: '0.7rem', background: `${B}09`, border: `1px solid ${B}25`, borderRadius: '8px', color: B, fontFamily: 'Orbitron', fontWeight: 700, fontSize: '0.8rem', cursor: 'pointer', textAlign: 'left' }}>
                                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                                         <span>{m} Challenge</span>
-                                                        <span style={{ fontSize: '0.65rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>{m === '60-Day' ? '≤3 miss' : '≤3 miss · 2× bonus'}</span>
+                                                        <span style={{ fontSize: '0.65rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>{m === '60-Day' ? '≤3 miss' : '≤3 miss · 2× bonus'}</span>
                                                     </div>
-                                                    <div style={{ fontSize: '0.65rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginTop: '0.2rem' }}>Daily domain tasks · Streak multiplier · Exclusive badge</div>
+                                                    <div style={{ fontSize: '0.65rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginTop: '0.2rem' }}>Daily domain tasks · Streak multiplier · Exclusive badge</div>
                                                 </motion.button>
                                             ))}
                                         </div>
@@ -496,7 +496,7 @@ export default function LeaderboardPage() {
                                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: `linear-gradient(90deg,${color},transparent)` }} />
                                     <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{icon}</div>
                                     <h3 style={{ fontFamily: 'Orbitron', fontSize: '0.82rem', fontWeight: 700, color, marginBottom: '0.5rem' }}>{title}</h3>
-                                    <p style={{ fontSize: '0.78rem', color: '#3a6b45', lineHeight: 1.65 }}>{body}</p>
+                                    <p style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.65 }}>{body}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -531,7 +531,7 @@ Leaderboard       → user_id, total_score, global_rank, season, updated_at`}</p
                                     <div key={route} style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start', padding: '0.35rem 0', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
                                         <span style={{ fontSize: '0.62rem', color: method === 'GET' ? G : method === 'WS' ? A : B, background: method === 'GET' ? `${G}0d` : method === 'WS' ? `${A}0d` : `${B}0d`, border: `1px solid ${method === 'GET' ? G : method === 'WS' ? A : B}25`, borderRadius: '3px', padding: '0.06rem 0.3rem', fontFamily: 'JetBrains Mono', flexShrink: 0 }}>{method}</span>
                                         <span style={{ fontSize: '0.72rem', color: '#e8f5e9', fontFamily: 'JetBrains Mono', flex: 1 }}>{route}</span>
-                                        <span style={{ fontSize: '0.68rem', color: '#3a6b45' }}>{desc}</span>
+                                        <span style={{ fontSize: '0.68rem', color: '#64748b' }}>{desc}</span>
                                     </div>
                                 ))}
                             </div>
@@ -541,13 +541,13 @@ Leaderboard       → user_id, total_score, global_rank, season, updated_at`}</p
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                             <div style={{ background: 'rgba(5,18,8,0.88)', border: `1px solid ${G}15`, borderRadius: '10px', padding: '1.1rem' }}>
                                 <h4 style={{ fontFamily: 'Orbitron', fontSize: '0.8rem', color: G, marginBottom: '0.75rem' }}>🔴 Real-Time Design</h4>
-                                <div style={{ fontSize: '0.75rem', color: '#3a6b45', lineHeight: 1.7, fontFamily: 'JetBrains Mono' }}>
+                                <div style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.7, fontFamily: 'JetBrains Mono' }}>
                                     {['WebSocket → broadcast score delta every 6s', 'Redis pub/sub → fan-out to connected clients', 'Score cached in Redis (5-min TTL)', 'PostgreSQL write-through on task completion', 'React re-renders only changed rows (keyed)'].map(l => <div key={l}>• {l}</div>)}
                                 </div>
                             </div>
                             <div style={{ background: 'rgba(0,5,20,0.88)', border: `1px solid ${B}15`, borderRadius: '10px', padding: '1.1rem' }}>
                                 <h4 style={{ fontFamily: 'Orbitron', fontSize: '0.8rem', color: B, marginBottom: '0.75rem' }}>☁️ Deployment</h4>
-                                <div style={{ fontSize: '0.75rem', color: '#3a6b45', lineHeight: 1.7, fontFamily: 'JetBrains Mono' }}>
+                                <div style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.7, fontFamily: 'JetBrains Mono' }}>
                                     {['Frontend → Vercel (Next.js / React)', 'Backend → Render (FastAPI + Uvicorn)', 'DB → Supabase PostgreSQL (free tier)', 'Cache → Upstash Redis (serverless)', 'Midnight cron → reset daily tasks'].map(l => <div key={l}>• {l}</div>)}
                                 </div>
                             </div>

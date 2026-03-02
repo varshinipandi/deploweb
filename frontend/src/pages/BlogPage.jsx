@@ -59,7 +59,7 @@ export default function BlogPage() {
                         <h1 style={{ fontFamily: 'Orbitron', fontSize: '1.8rem', fontWeight: 800, color: '#e8f5e9' }}>
                             HQ <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Blog</span>
                         </h1>
-                        <p style={{ color: '#3a6b45', fontSize: '0.85rem', marginTop: '0.2rem' }}>Research · Tutorials · Writeups · Insights</p>
+                        <p style={{ color: '#64748b', fontSize: '0.85rem', marginTop: '0.2rem' }}>Research · Tutorials · Writeups · Insights</p>
                     </div>
                     <motion.button whileHover={{ scale: 1.04, boxShadow: '0 0 30px rgba(0,255,65,0.3),0 0 60px rgba(0,212,255,0.15)' }} whileTap={{ scale: 0.96 }}
                         onClick={() => setShowCreate(true)}
@@ -70,12 +70,12 @@ export default function BlogPage() {
 
                 {/* Tag filter */}
                 <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-                    <button onClick={() => setFilter('All')} style={{ padding: '0.32rem 0.7rem', borderRadius: '6px', border: filter === 'All' ? '1px solid rgba(0,212,255,0.35)' : '1px solid rgba(100,116,139,0.1)', background: filter === 'All' ? 'rgba(0,212,255,0.08)' : 'transparent', color: filter === 'All' ? '#00d4ff' : '#3a6b45', fontSize: '0.7rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>All</button>
+                    <button onClick={() => setFilter('All')} style={{ padding: '0.32rem 0.7rem', borderRadius: '6px', border: filter === 'All' ? '1px solid rgba(0,212,255,0.35)' : '1px solid rgba(100,116,139,0.1)', background: filter === 'All' ? 'rgba(0,212,255,0.08)' : 'transparent', color: filter === 'All' ? '#00d4ff' : '#64748b', fontSize: '0.7rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>All</button>
                     {ALL_TAGS.map(tag => {
                         const tc = tagColors(tag)
                         return (
                             <button key={tag} onClick={() => setFilter(tag)}
-                                style={{ padding: '0.32rem 0.7rem', borderRadius: '6px', border: filter === tag ? `1px solid ${tc.border}` : '1px solid rgba(100,116,139,0.1)', background: filter === tag ? tc.bg : 'transparent', color: filter === tag ? tc.c : '#3a6b45', fontSize: '0.7rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                style={{ padding: '0.32rem 0.7rem', borderRadius: '6px', border: filter === tag ? `1px solid ${tc.border}` : '1px solid rgba(100,116,139,0.1)', background: filter === tag ? tc.bg : 'transparent', color: filter === tag ? tc.c : '#64748b', fontSize: '0.7rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                 {tag}
                             </button>
                         )
@@ -103,13 +103,13 @@ export default function BlogPage() {
                                         </div>
                                         <div style={{ padding: '1.1rem' }}>
                                             <h3 style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: '#e8f5e9', marginBottom: '0.45rem', lineHeight: 1.3 }}>{a.title}</h3>
-                                            <p style={{ fontSize: '0.76rem', color: '#3a6b45', lineHeight: 1.6, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', marginBottom: '0.75rem' }}>{a.excerpt}</p>
+                                            <p style={{ fontSize: '0.76rem', color: '#64748b', lineHeight: 1.6, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', marginBottom: '0.75rem' }}>{a.excerpt}</p>
                                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                                     <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: ai ? 'linear-gradient(135deg,#00d4ff,#0096cc)' : 'linear-gradient(135deg,#00ff41,#00c853)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.5rem', color: '#020d04', fontWeight: 700 }}>{a.av}</div>
                                                     <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>{a.author}</span>
                                                 </div>
-                                                <div style={{ display: 'flex', gap: '0.5rem', fontSize: '0.65rem', color: '#3a6b45', alignItems: 'center', fontFamily: 'JetBrains Mono' }}>
+                                                <div style={{ display: 'flex', gap: '0.5rem', fontSize: '0.65rem', color: '#64748b', alignItems: 'center', fontFamily: 'JetBrains Mono' }}>
                                                     <Clock size={10} /> {a.readTime}m
                                                     <ThumbsUp size={10} style={{ color: '#00ff41' }} /> {a.claps + (clapState[a.id] || 0)}
                                                 </div>
@@ -137,7 +137,7 @@ export default function BlogPage() {
                                     <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: ai ? 'linear-gradient(135deg,#00d4ff,#0096cc)' : 'linear-gradient(135deg,#00ff41,#00c853)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.68rem', fontWeight: 700, color: '#020d04', flexShrink: 0 }}>{a.av}</div>
                                     <div>
                                         <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#e8f5e9' }}>{a.author}</span>
-                                        <div style={{ fontSize: '0.65rem', color: '#3a6b45', display: 'flex', gap: '0.5rem', marginTop: '0.1rem', fontFamily: 'JetBrains Mono' }}>
+                                        <div style={{ fontSize: '0.65rem', color: '#64748b', display: 'flex', gap: '0.5rem', marginTop: '0.1rem', fontFamily: 'JetBrains Mono' }}>
                                             <span>{a.date}</span><span>·</span><Clock size={10} /><span>{a.readTime} min read</span>
                                         </div>
                                     </div>
@@ -167,13 +167,13 @@ export default function BlogPage() {
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', borderTop: '1px solid rgba(255,255,255,0.04)', paddingTop: '0.7rem' }}>
                                     <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => clap(a.id)}
-                                        style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', background: myClaps > 0 ? 'rgba(0,255,65,0.08)' : 'none', border: 'none', borderRadius: '6px', padding: '0.2rem 0.5rem', color: myClaps > 0 ? '#00ff41' : '#3a6b45', cursor: 'pointer', fontSize: '0.78rem', fontFamily: 'JetBrains Mono' }}>
+                                        style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', background: myClaps > 0 ? 'rgba(0,255,65,0.08)' : 'none', border: 'none', borderRadius: '6px', padding: '0.2rem 0.5rem', color: myClaps > 0 ? '#00ff41' : '#64748b', cursor: 'pointer', fontSize: '0.78rem', fontFamily: 'JetBrains Mono' }}>
                                         👏 {a.claps + myClaps} {myClaps > 0 && `(+${myClaps})`}
                                     </motion.button>
                                     <button onClick={() => setExpanded(isOpen ? null : a.id)} style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', background: 'none', border: 'none', color: '#00d4ff', cursor: 'pointer', fontSize: '0.75rem', fontFamily: 'JetBrains Mono' }}>
                                         <MessageSquare size={12} /> {a.comments}
                                     </button>
-                                    <button onClick={() => setBookmarks(b => ({ ...b, [a.id]: !b[a.id] }))} style={{ background: 'none', border: 'none', color: bookmarks[a.id] ? '#f59e0b' : '#3a6b45', cursor: 'pointer', marginLeft: 'auto' }}><Bookmark size={14} /></button>
+                                    <button onClick={() => setBookmarks(b => ({ ...b, [a.id]: !b[a.id] }))} style={{ background: 'none', border: 'none', color: bookmarks[a.id] ? '#f59e0b' : '#64748b', cursor: 'pointer', marginLeft: 'auto' }}><Bookmark size={14} /></button>
                                 </div>
                             </motion.div>
                         )
@@ -192,34 +192,34 @@ export default function BlogPage() {
                             <div style={{ padding: '2rem' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                                     <h2 style={{ fontFamily: 'Orbitron', fontSize: '1.1rem', fontWeight: 800, color: '#e8f5e9', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><PenTool size={16} style={{ color: '#00d4ff' }} /> Write Article</h2>
-                                    <button onClick={() => setShowCreate(false)} style={{ background: 'none', border: 'none', color: '#3a6b45', cursor: 'pointer' }}><X size={18} /></button>
+                                    <button onClick={() => setShowCreate(false)} style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer' }}><X size={18} /></button>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                     <div>
-                                        <label style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>TITLE</label>
+                                        <label style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>TITLE</label>
                                         <input className="cyber-input" placeholder="Compelling article title…" value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} />
                                     </div>
                                     <div>
-                                        <label style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>EXCERPT / SUMMARY</label>
+                                        <label style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>EXCERPT / SUMMARY</label>
                                         <textarea className="cyber-input" placeholder="One-paragraph summary that hooks readers…" value={form.excerpt} onChange={e => setForm(f => ({ ...f, excerpt: e.target.value }))} style={{ minHeight: '80px', resize: 'vertical', fontFamily: 'Inter' }} />
                                     </div>
                                     <div>
-                                        <label style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>FULL CONTENT</label>
+                                        <label style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>FULL CONTENT</label>
                                         <textarea className="cyber-input" placeholder="Write your full article here (markdown supported)…" value={form.body} onChange={e => setForm(f => ({ ...f, body: e.target.value }))} style={{ minHeight: '160px', resize: 'vertical', fontFamily: 'JetBrains Mono', fontSize: '0.78rem' }} />
                                     </div>
                                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                                         <div>
-                                            <label style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>DOMAIN</label>
+                                            <label style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>DOMAIN</label>
                                             <select className="cyber-input" value={form.domain} onChange={e => setForm(f => ({ ...f, domain: e.target.value }))} style={{ fontSize: '0.78rem' }}>
                                                 {['AI', 'Cybersecurity', 'Web Dev', 'General'].map(d => <option key={d}>{d}</option>)}
                                             </select>
                                         </div>
                                         <div>
-                                            <label style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>TAGS</label>
+                                            <label style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>TAGS</label>
                                             <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
                                                 {['AI Security', 'CTF', 'JWT', 'Machine Learning', 'Privacy', 'Web Security', 'Backend'].map(t => (
                                                     <button key={t} onClick={() => setForm(f => ({ ...f, tags: f.tags.includes(t) ? f.tags.filter(x => x !== t) : [...f.tags, t] }))}
-                                                        style={{ padding: '0.2rem 0.4rem', borderRadius: '4px', border: form.tags.includes(t) ? '1px solid rgba(0,255,65,0.4)' : '1px solid rgba(100,116,139,0.1)', background: form.tags.includes(t) ? 'rgba(0,255,65,0.08)' : 'transparent', color: form.tags.includes(t) ? '#00ff41' : '#3a6b45', fontSize: '0.62rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                                        style={{ padding: '0.2rem 0.4rem', borderRadius: '4px', border: form.tags.includes(t) ? '1px solid rgba(0,255,65,0.4)' : '1px solid rgba(100,116,139,0.1)', background: form.tags.includes(t) ? 'rgba(0,255,65,0.08)' : 'transparent', color: form.tags.includes(t) ? '#00ff41' : '#64748b', fontSize: '0.62rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                                         {t}
                                                     </button>
                                                 ))}

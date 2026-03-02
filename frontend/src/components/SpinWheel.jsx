@@ -4,13 +4,13 @@ import { X } from 'lucide-react'
 
 const SEGMENTS = [
     { label: '50 pts', value: 50, color: '#00ff41', textColor: '#020d04' },
-    { label: 'Try Again', value: 0, color: '#1a3a24', textColor: '#3a6b45' },
+    { label: 'Try Again', value: 0, color: '#1a3a24', textColor: '#64748b' },
     { label: '200 pts', value: 200, color: '#00d4ff', textColor: '#020d04' },
     { label: '25 pts', value: 25, color: '#0d4a20', textColor: '#00ff41' },
     { label: '🎉 500 pts', value: 500, color: '#f59e0b', textColor: '#020d04' },
     { label: '100 pts', value: 100, color: '#00ff41', textColor: '#020d04' },
     { label: '75 pts', value: 75, color: '#00d4ff', textColor: '#020d04' },
-    { label: 'Try Again', value: 0, color: '#1a2a3a', textColor: '#3a6b45' },
+    { label: 'Try Again', value: 0, color: '#1a2a3a', textColor: '#64748b' },
 ]
 const N = SEGMENTS.length
 const SLICEDEG = 360 / N
@@ -98,7 +98,7 @@ export default function SpinWheel({ onWin }) {
             {/* Title */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
                 <span style={{ fontFamily: 'Orbitron', fontSize: '0.9rem', fontWeight: 700, background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Daily XP Spin</span>
-                {spunToday && <span style={{ fontSize: '0.62rem', color: '#3a6b45', background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(100,116,139,0.1)', borderRadius: '4px', padding: '0.05rem 0.35rem', fontFamily: 'JetBrains Mono' }}>Come back tomorrow</span>}
+                {spunToday && <span style={{ fontSize: '0.62rem', color: '#64748b', background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(100,116,139,0.1)', borderRadius: '4px', padding: '0.05rem 0.35rem', fontFamily: 'JetBrains Mono' }}>Come back tomorrow</span>}
             </div>
 
             {/* Pointer */}
@@ -109,7 +109,7 @@ export default function SpinWheel({ onWin }) {
 
             <motion.button whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(0,255,65,0.35),0 0 50px rgba(0,212,255,0.15)' }} whileTap={{ scale: 0.95 }}
                 onClick={spin} disabled={spinning || spunToday}
-                style={{ marginTop: '1rem', padding: '0.65rem 2rem', background: spinning || spunToday ? 'rgba(0,0,0,0.3)' : 'linear-gradient(135deg,#00ff41,#00d4ff)', border: spinning || spunToday ? '1px solid rgba(100,116,139,0.15)' : 'none', borderRadius: '8px', color: spinning || spunToday ? '#3a6b45' : '#020d04', fontFamily: 'Orbitron', fontWeight: 800, fontSize: '0.82rem', cursor: spinning || spunToday ? 'not-allowed' : 'pointer', letterSpacing: '0.04em' }}>
+                style={{ marginTop: '1rem', padding: '0.65rem 2rem', background: spinning || spunToday ? 'rgba(0,0,0,0.3)' : 'linear-gradient(135deg,#00ff41,#00d4ff)', border: spinning || spunToday ? '1px solid rgba(100,116,139,0.15)' : 'none', borderRadius: '8px', color: spinning || spunToday ? '#64748b' : '#020d04', fontFamily: 'Orbitron', fontWeight: 800, fontSize: '0.82rem', cursor: spinning || spunToday ? 'not-allowed' : 'pointer', letterSpacing: '0.04em' }}>
                 {spinning ? '⟳ SPINNING…' : spunToday ? '✓ DONE FOR TODAY' : '⚡ SPIN NOW'}
             </motion.button>
 
@@ -117,7 +117,7 @@ export default function SpinWheel({ onWin }) {
                 {result && (
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
                         style={{ marginTop: '0.85rem', padding: '0.65rem 1rem', background: result.value > 0 ? 'rgba(0,255,65,0.08)' : 'rgba(0,0,0,0.2)', border: result.value > 0 ? '1px solid rgba(0,255,65,0.25)' : '1px solid rgba(100,116,139,0.1)', borderRadius: '8px' }}>
-                        <div style={{ fontFamily: 'Orbitron', fontSize: '1rem', fontWeight: 900, color: result.value >= 500 ? '#f59e0b' : result.value > 0 ? '#00ff41' : '#3a6b45' }}>
+                        <div style={{ fontFamily: 'Orbitron', fontSize: '1rem', fontWeight: 900, color: result.value >= 500 ? '#f59e0b' : result.value > 0 ? '#00ff41' : '#64748b' }}>
                             {result.value > 0 ? `+${result.value} XP Earned!` : 'Better luck tomorrow!'}
                         </div>
                         {result.value >= 500 && <div style={{ fontSize: '0.7rem', color: '#f59e0b', fontFamily: 'JetBrains Mono', marginTop: '0.2rem' }}>🎉 JACKPOT!</div>}

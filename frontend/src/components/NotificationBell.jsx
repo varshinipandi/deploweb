@@ -30,7 +30,7 @@ export default function NotificationBell() {
         <div ref={ref} style={{ position: 'relative' }}>
             <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => setOpen(!open)}
                 style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer', padding: '0.4rem' }}>
-                <Bell size={18} style={{ color: unread > 0 ? '#00ff41' : '#3a6b45', filter: unread > 0 ? 'drop-shadow(0 0 6px rgba(0,255,65,0.6))' : 'none' }} />
+                <Bell size={18} style={{ color: unread > 0 ? '#00ff41' : '#64748b', filter: unread > 0 ? 'drop-shadow(0 0 6px rgba(0,255,65,0.6))' : 'none' }} />
                 {unread > 0 && (
                     <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}
                         style={{ position: 'absolute', top: 0, right: 0, width: '16px', height: '16px', background: 'linear-gradient(135deg,#ef4444,#dc2626)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.55rem', color: '#fff', fontWeight: 700, border: '2px solid #020d04' }}>
@@ -57,7 +57,7 @@ export default function NotificationBell() {
                         {/* List */}
                         <div style={{ maxHeight: '340px', overflowY: 'auto' }}>
                             {notifs.length === 0 && (
-                                <div style={{ padding: '2rem', textAlign: 'center', color: '#3a6b45', fontSize: '0.8rem', fontFamily: 'JetBrains Mono' }}>All caught up ✓</div>
+                                <div style={{ padding: '2rem', textAlign: 'center', color: '#64748b', fontSize: '0.8rem', fontFamily: 'JetBrains Mono' }}>All caught up ✓</div>
                             )}
                             {notifs.map((n, i) => (
                                 <motion.div key={n.id} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.04 }}
@@ -66,17 +66,17 @@ export default function NotificationBell() {
                                     {!n.read && <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '2px', background: n.color, borderRadius: '0 2px 2px 0' }} />}
                                     <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: `${n.color}15`, border: `1px solid ${n.color}25`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', flexShrink: 0 }}>{n.icon}</div>
                                     <div style={{ flex: 1, minWidth: 0 }}>
-                                        <p style={{ fontSize: '0.76rem', color: n.read ? '#3a6b45' : '#94a3b8', lineHeight: 1.5, marginBottom: '0.12rem' }}>{n.msg}</p>
-                                        <span style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>{n.time}</span>
+                                        <p style={{ fontSize: '0.76rem', color: n.read ? '#64748b' : '#94a3b8', lineHeight: 1.5, marginBottom: '0.12rem' }}>{n.msg}</p>
+                                        <span style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>{n.time}</span>
                                     </div>
-                                    <button onClick={(e) => { e.stopPropagation(); dismiss(n.id) }} style={{ background: 'none', border: 'none', color: '#3a6b45', cursor: 'pointer', flexShrink: 0, padding: '0.1rem' }}><X size={11} /></button>
+                                    <button onClick={(e) => { e.stopPropagation(); dismiss(n.id) }} style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer', flexShrink: 0, padding: '0.1rem' }}><X size={11} /></button>
                                 </motion.div>
                             ))}
                         </div>
 
                         {/* Footer */}
                         <div style={{ padding: '0.65rem', borderTop: '1px solid rgba(255,255,255,0.04)', textAlign: 'center' }}>
-                            <button onClick={() => setNotifs([])} style={{ background: 'none', border: 'none', color: '#3a6b45', cursor: 'pointer', fontSize: '0.68rem', fontFamily: 'JetBrains Mono' }}>Clear all notifications</button>
+                            <button onClick={() => setNotifs([])} style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer', fontSize: '0.68rem', fontFamily: 'JetBrains Mono' }}>Clear all notifications</button>
                         </div>
                     </motion.div>
                 )}

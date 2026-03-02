@@ -234,7 +234,7 @@ export default function LandingPage() {
 
                 {/* Subtitle */}
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }}
-                    style={{ maxWidth: '560px', textAlign: 'center', fontSize: 'clamp(0.88rem, 2vw, 1rem)', color: '#3a6b45', lineHeight: 1.85, marginBottom: '2.5rem' }}
+                    style={{ maxWidth: '560px', textAlign: 'center', fontSize: 'clamp(0.88rem, 2vw, 1rem)', color: '#64748b', lineHeight: 1.85, marginBottom: '2.5rem' }}
                 >
                     The centralized command center where AI engineers and cybersecurity experts collaborate, compete, and grow.{' '}
                     <span style={{ color: '#00d4ff', textShadow: '0 0 10px rgba(0,212,255,0.4)' }}>No digital gravity holding you back.</span>
@@ -291,7 +291,7 @@ export default function LandingPage() {
             {/* ══ FEATURES ═══════════════════════════════════════════════════ */}
             <section style={{ position: 'relative', zIndex: 2, padding: '5rem 1.5rem' }}>
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                    <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem', color: '#3a6b45', letterSpacing: '0.22em', marginBottom: '0.75rem' }}>// PLATFORM MODULES</div>
+                    <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem', color: '#64748b', letterSpacing: '0.22em', marginBottom: '0.75rem' }}>// PLATFORM MODULES</div>
                     <h2 style={{ fontFamily: 'Orbitron', fontSize: 'clamp(1.5rem,4vw,2.3rem)', fontWeight: 800, color: '#e8f5e9' }}>
                         Everything You Need to{' '}
                         <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Dominate</span>
@@ -323,7 +323,7 @@ export default function LandingPage() {
                                         <span style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono', color: f.color, background: `${f.color}10`, border: `1px solid ${f.color}22`, borderRadius: '4px', padding: '0.1rem 0.42rem', letterSpacing: '0.08em' }}>{f.tag}</span>
                                     </div>
                                 </div>
-                                <p style={{ fontSize: '0.84rem', color: '#3a6b45', lineHeight: 1.72 }}>{f.desc}</p>
+                                <p style={{ fontSize: '0.84rem', color: '#64748b', lineHeight: 1.72 }}>{f.desc}</p>
                                 {/* Bottom line — green or blue */}
                                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '2px', background: `linear-gradient(90deg, transparent, ${f.color}45, transparent)` }} />
                             </motion.div>
@@ -365,12 +365,12 @@ export default function LandingPage() {
             {/* ══ FINAL CTA ══════════════════════════════════════════════════ */}
             <section style={{ position: 'relative', zIndex: 2, padding: '5rem 1.5rem 6rem', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                    <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.68rem', color: '#3a6b45', letterSpacing: '0.2em', marginBottom: '1rem' }}>// TAKE ACTION</div>
+                    <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.68rem', color: '#64748b', letterSpacing: '0.2em', marginBottom: '1rem' }}>// TAKE ACTION</div>
                     <h2 style={{ fontFamily: 'Orbitron', fontSize: 'clamp(1.5rem,4vw,2.2rem)', fontWeight: 900, color: '#e8f5e9', marginBottom: '1rem' }}>
                         Ready to{' '}
                         <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Go?</span>
                     </h2>
-                    <p style={{ color: '#3a6b45', maxWidth: '480px', margin: '0 auto 2.2rem', fontSize: '0.95rem', lineHeight: 1.7 }}>
+                    <p style={{ color: '#64748b', maxWidth: '480px', margin: '0 auto 2.2rem', fontSize: '0.95rem', lineHeight: 1.7 }}>
                         Join the community eliminating digital gravity from AI × Cybersecurity collaboration.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

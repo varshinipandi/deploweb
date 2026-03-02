@@ -34,7 +34,7 @@ function Countdown({ d: targetDate }) {
             {[['d', t.d], ['h', t.h], ['m', t.m], ['s', t.s]].map(([l, v]) => (
                 <div key={l} style={{ textAlign: 'center' }}>
                     <div style={{ fontFamily: 'Orbitron', fontSize: '0.9rem', fontWeight: 900, color: '#00ff41', background: 'rgba(0,255,65,0.08)', border: '1px solid rgba(0,255,65,0.18)', borderRadius: '5px', padding: '0.2rem 0.4rem', minWidth: '30px', textShadow: '0 0 8px rgba(0,255,65,0.4)' }}>{String(v).padStart(2, '0')}</div>
-                    <div style={{ fontSize: '0.5rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>{l}</div>
+                    <div style={{ fontSize: '0.5rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>{l}</div>
                 </div>
             ))}
         </div>
@@ -56,7 +56,7 @@ function EventModal({ event: ev, onClose }) {
                             <span style={{ fontSize: '0.68rem', fontFamily: 'JetBrains Mono', color: col.primary, background: col.secondary, border: `1px solid ${col.border}`, borderRadius: '4px', padding: '0.12rem 0.4rem' }}>{ev.type.toUpperCase()}</span>
                             {ev.ai && <span style={{ fontSize: '0.68rem', fontFamily: 'JetBrains Mono', color: '#00d4ff', background: 'rgba(0,212,255,0.07)', border: '1px solid rgba(0,212,255,0.22)', borderRadius: '4px', padding: '0.12rem 0.4rem' }}>★ AI PICK</span>}
                         </div>
-                        <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#3a6b45', cursor: 'pointer' }}><X size={18} /></button>
+                        <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer' }}><X size={18} /></button>
                     </div>
                     <h2 style={{ fontFamily: 'Orbitron', fontSize: '1.35rem', fontWeight: 800, color: '#e8f5e9', marginBottom: '1rem' }}>{ev.title}</h2>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.6rem', marginBottom: '1.25rem' }}>
@@ -64,18 +64,18 @@ function EventModal({ event: ev, onClose }) {
                             <div key={lb} style={{ textAlign: 'center', padding: '0.8rem', background: 'rgba(0,0,0,0.3)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.04)' }}>
                                 <div style={{ fontSize: '1.1rem', marginBottom: '0.2rem' }}>{ic}</div>
                                 <div style={{ fontFamily: 'Orbitron', fontWeight: 700, color: c, fontSize: '0.82rem' }}>{val}</div>
-                                <div style={{ fontSize: '0.58rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>{lb}</div>
+                                <div style={{ fontSize: '0.58rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>{lb}</div>
                             </div>
                         ))}
                     </div>
                     <p style={{ fontSize: '0.87rem', color: '#94a3b8', lineHeight: 1.8, marginBottom: '1.25rem' }}>{ev.desc}</p>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.78rem', color: '#3a6b45', marginBottom: '1.25rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.78rem', color: '#64748b', marginBottom: '1.25rem' }}>
                         <Calendar size={13} style={{ color: col.primary }} />
                         {ev.date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
                     </div>
                     {ev.status === 'upcoming' && (
                         <div style={{ marginBottom: '1.25rem' }}>
-                            <div style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>STARTS IN</div>
+                            <div style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>STARTS IN</div>
                             <Countdown d={ev.date} />
                         </div>
                     )}
@@ -85,7 +85,7 @@ function EventModal({ event: ev, onClose }) {
                             REGISTER NOW
                         </motion.button>
                     ) : (
-                        <div style={{ textAlign: 'center', fontSize: '0.8rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', padding: '0.75rem', border: '1px solid rgba(100,116,139,0.1)', borderRadius: '8px' }}>Event has ended</div>
+                        <div style={{ textAlign: 'center', fontSize: '0.8rem', color: '#64748b', fontFamily: 'JetBrains Mono', padding: '0.75rem', border: '1px solid rgba(100,116,139,0.1)', borderRadius: '8px' }}>Event has ended</div>
                     )}
                 </div>
             </motion.div>
@@ -111,9 +111,9 @@ function EventCard({ ev, onClick }) {
             <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
                 {ev.tags.map(t => <span key={t} style={{ fontSize: '0.58rem', color: col.primary, background: col.secondary, border: `1px solid ${col.border}`, borderRadius: '3px', padding: '0.07rem 0.3rem', fontFamily: 'JetBrains Mono' }}>#{t}</span>)}
             </div>
-            <p style={{ fontSize: '0.78rem', color: '#3a6b45', lineHeight: 1.6, marginBottom: '0.85rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{ev.desc}</p>
+            <p style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.6, marginBottom: '0.85rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{ev.desc}</p>
             <div style={{ marginBottom: '0.85rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.6rem', color: '#3a6b45', marginBottom: '0.2rem', fontFamily: 'JetBrains Mono' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.6rem', color: '#64748b', marginBottom: '0.2rem', fontFamily: 'JetBrains Mono' }}>
                     <span><Users size={9} style={{ display: 'inline' }} /> {ev.participants}</span>
                     <span>{Math.round(fill)}% filled</span>
                 </div>
@@ -122,7 +122,7 @@ function EventCard({ ev, onClick }) {
                 </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                {ev.status === 'upcoming' ? <Countdown d={ev.date} /> : <span style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>Event ended</span>}
+                {ev.status === 'upcoming' ? <Countdown d={ev.date} /> : <span style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>Event ended</span>}
                 <span style={{ fontSize: '0.68rem', color: col.primary, fontFamily: 'JetBrains Mono', display: 'flex', alignItems: 'center', gap: '0.2rem' }}>VIEW <ChevronRight size={10} /></span>
             </div>
         </motion.div>
@@ -158,7 +158,7 @@ export default function EventsPage() {
                     <h1 style={{ fontFamily: 'Orbitron', fontSize: '1.8rem', fontWeight: 800, color: '#e8f5e9', marginBottom: '0.3rem' }}>
                         Mission <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Control</span>
                     </h1>
-                    <p style={{ color: '#3a6b45', fontSize: '0.88rem' }}>Hackathons, CTFs, workshops. <span style={{ color: '#00ff41' }}>Green</span> = Security · <span style={{ color: '#00d4ff' }}>Blue</span> = AI · ★ = AI Pick</p>
+                    <p style={{ color: '#64748b', fontSize: '0.88rem' }}>Hackathons, CTFs, workshops. <span style={{ color: '#00ff41' }}>Green</span> = Security · <span style={{ color: '#00d4ff' }}>Blue</span> = AI · ★ = AI Pick</p>
                 </motion.div>
 
                 {/* AI Rec Bar */}
@@ -177,7 +177,7 @@ export default function EventsPage() {
                         const tc = t.c || '#e8f5e9'
                         return (
                             <motion.button key={t.key} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} onClick={() => setTab(t.key)}
-                                style={{ padding: '0.42rem 0.9rem', borderRadius: '7px', border: active ? `1px solid ${tc}50` : '1px solid rgba(100,116,139,0.1)', background: active ? `${tc}10` : 'rgba(0,0,0,0.25)', color: active ? tc : '#3a6b45', fontFamily: 'JetBrains Mono', fontSize: '0.75rem', cursor: 'pointer', fontWeight: active ? 700 : 400 }}>
+                                style={{ padding: '0.42rem 0.9rem', borderRadius: '7px', border: active ? `1px solid ${tc}50` : '1px solid rgba(100,116,139,0.1)', background: active ? `${tc}10` : 'rgba(0,0,0,0.25)', color: active ? tc : '#64748b', fontFamily: 'JetBrains Mono', fontSize: '0.75rem', cursor: 'pointer', fontWeight: active ? 700 : 400 }}>
                                 {t.label} ({counts[t.key]})
                             </motion.button>
                         )
@@ -187,13 +187,13 @@ export default function EventsPage() {
                 {/* Filters */}
                 <div style={{ display: 'flex', gap: '0.65rem', marginBottom: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
                     <div style={{ position: 'relative', flex: 1, minWidth: '180px' }}>
-                        <Search size={13} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#3a6b45' }} />
+                        <Search size={13} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#64748b' }} />
                         <input className="cyber-input" placeholder="Search events…" value={search} onChange={e => setSearch(e.target.value)} style={{ paddingLeft: '2rem' }} />
                     </div>
                     <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
                         {TAGS.map(tg => (
                             <button key={tg} onClick={() => setTag(tg)}
-                                style={{ padding: '0.38rem 0.7rem', borderRadius: '6px', border: tag === tg ? '1px solid rgba(0,212,255,0.35)' : '1px solid rgba(100,116,139,0.1)', background: tag === tg ? 'rgba(0,212,255,0.07)' : 'rgba(0,0,0,0.2)', color: tag === tg ? '#00d4ff' : '#3a6b45', fontSize: '0.73rem', cursor: 'pointer' }}>
+                                style={{ padding: '0.38rem 0.7rem', borderRadius: '6px', border: tag === tg ? '1px solid rgba(0,212,255,0.35)' : '1px solid rgba(100,116,139,0.1)', background: tag === tg ? 'rgba(0,212,255,0.07)' : 'rgba(0,0,0,0.2)', color: tag === tg ? '#00d4ff' : '#64748b', fontSize: '0.73rem', cursor: 'pointer' }}>
                                 {tg}
                             </button>
                         ))}
@@ -214,7 +214,7 @@ export default function EventsPage() {
                         ))}
                     </div>
                 ) : (
-                    <div style={{ textAlign: 'center', padding: '4rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>No events found.</div>
+                    <div style={{ textAlign: 'center', padding: '4rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>No events found.</div>
                 )}
             </div>
             <AnimatePresence>{selected && <EventModal event={selected} onClose={() => setSelected(null)} />}</AnimatePresence>

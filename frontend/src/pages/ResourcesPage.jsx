@@ -57,7 +57,7 @@ function SkillTree() {
                                     </motion.div>
                                 )}
                             </AnimatePresence>
-                            {!open && <p style={{ fontSize: '0.68rem', color: '#3a6b45', marginTop: '0.3rem', fontFamily: 'JetBrains Mono' }}>{nodes.length} skills · tap to expand</p>}
+                            {!open && <p style={{ fontSize: '0.68rem', color: '#64748b', marginTop: '0.3rem', fontFamily: 'JetBrains Mono' }}>{nodes.length} skills · tap to expand</p>}
                         </motion.div>
                     )
                 })}
@@ -115,7 +115,7 @@ export default function ResourcesPage() {
                         <h1 style={{ fontFamily: 'Orbitron', fontSize: '1.8rem', fontWeight: 800, color: '#e8f5e9' }}>
                             Resource <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Library</span>
                         </h1>
-                        <p style={{ color: '#3a6b45', fontSize: '0.85rem', marginTop: '0.2rem' }}>Curated learning resources, roadmaps, and CTF writeups</p>
+                        <p style={{ color: '#64748b', fontSize: '0.85rem', marginTop: '0.2rem' }}>Curated learning resources, roadmaps, and CTF writeups</p>
                     </div>
                     <motion.button whileHover={{ scale: 1.04, boxShadow: '0 0 30px rgba(0,255,65,0.3),0 0 60px rgba(0,212,255,0.15)' }} whileTap={{ scale: 0.96 }}
                         onClick={() => setShowSubmit(true)}
@@ -127,14 +127,14 @@ export default function ResourcesPage() {
                 {/* Filters */}
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }} style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     <div style={{ position: 'relative' }}>
-                        <Search size={14} style={{ position: 'absolute', left: '0.9rem', top: '50%', transform: 'translateY(-50%)', color: '#3a6b45' }} />
+                        <Search size={14} style={{ position: 'absolute', left: '0.9rem', top: '50%', transform: 'translateY(-50%)', color: '#64748b' }} />
                         <input className="cyber-input" placeholder="Search resources…" value={search} onChange={e => setSearch(e.target.value)} style={{ paddingLeft: '2.2rem' }} />
                     </div>
                     <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
-                        <Filter size={12} style={{ color: '#3a6b45' }} />
+                        <Filter size={12} style={{ color: '#64748b' }} />
                         {RESOURCE_TYPES.map(t => (
                             <button key={t} onClick={() => setType(t)}
-                                style={{ padding: '0.3rem 0.65rem', borderRadius: '6px', border: type === t ? '1px solid rgba(0,255,65,0.35)' : '1px solid rgba(100,116,139,0.1)', background: type === t ? 'rgba(0,255,65,0.08)' : 'rgba(0,0,0,0.2)', color: type === t ? '#00ff41' : '#3a6b45', fontSize: '0.7rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                style={{ padding: '0.3rem 0.65rem', borderRadius: '6px', border: type === t ? '1px solid rgba(0,255,65,0.35)' : '1px solid rgba(100,116,139,0.1)', background: type === t ? 'rgba(0,255,65,0.08)' : 'rgba(0,0,0,0.2)', color: type === t ? '#00ff41' : '#64748b', fontSize: '0.7rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                 {t}
                             </button>
                         ))}
@@ -142,14 +142,14 @@ export default function ResourcesPage() {
                     <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
                         {CATEGORIES.map(c => (
                             <button key={c} onClick={() => setCategory(c)}
-                                style={{ padding: '0.3rem 0.65rem', borderRadius: '6px', border: category === c ? '1px solid rgba(0,212,255,0.35)' : '1px solid rgba(100,116,139,0.1)', background: category === c ? 'rgba(0,212,255,0.08)' : 'rgba(0,0,0,0.2)', color: category === c ? '#00d4ff' : '#3a6b45', fontSize: '0.7rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                style={{ padding: '0.3rem 0.65rem', borderRadius: '6px', border: category === c ? '1px solid rgba(0,212,255,0.35)' : '1px solid rgba(100,116,139,0.1)', background: category === c ? 'rgba(0,212,255,0.08)' : 'rgba(0,0,0,0.2)', color: category === c ? '#00d4ff' : '#64748b', fontSize: '0.7rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                 {c}
                             </button>
                         ))}
                         <div style={{ marginLeft: 'auto', display: 'flex', gap: '0.4rem' }}>
                             {DIFFICULTIES.map(d => (
                                 <button key={d} onClick={() => setDifficulty(d)}
-                                    style={{ padding: '0.28rem 0.6rem', borderRadius: '5px', border: difficulty === d ? `1px solid ${diffColor(d)}40` : '1px solid rgba(100,116,139,0.08)', background: difficulty === d ? `${diffColor(d)}0d` : 'transparent', color: difficulty === d ? diffColor(d) : '#3a6b45', fontSize: '0.68rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                    style={{ padding: '0.28rem 0.6rem', borderRadius: '5px', border: difficulty === d ? `1px solid ${diffColor(d)}40` : '1px solid rgba(100,116,139,0.08)', background: difficulty === d ? `${diffColor(d)}0d` : 'transparent', color: difficulty === d ? diffColor(d) : '#64748b', fontSize: '0.68rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                     {d}
                                 </button>
                             ))}
@@ -182,12 +182,12 @@ export default function ResourcesPage() {
                                         style={{ color: ai ? '#00d4ff' : '#00ff41', display: 'flex' }}><ExternalLink size={13} /></a>
                                 </div>
                                 <h3 style={{ fontFamily: 'Orbitron', fontSize: '0.88rem', fontWeight: 700, color: '#e8f5e9', marginBottom: '0.5rem', lineHeight: 1.3 }}>{r.title}</h3>
-                                <p style={{ fontSize: '0.78rem', color: '#3a6b45', lineHeight: 1.65, marginBottom: '0.85rem', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{r.desc}</p>
+                                <p style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.65, marginBottom: '0.85rem', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{r.desc}</p>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                    <span style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>by {r.submittedBy}</span>
+                                    <span style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>by {r.submittedBy}</span>
                                     <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => upvote(r.id)}
-                                        style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', background: vd ? 'rgba(0,255,65,0.1)' : 'none', border: vd ? '1px solid rgba(0,255,65,0.25)' : 'none', borderRadius: '6px', padding: '0.2rem 0.5rem', color: vd ? '#00ff41' : '#3a6b45', cursor: 'pointer', fontSize: '0.78rem', fontFamily: 'JetBrains Mono' }}>
-                                        <ThumbsUp size={12} style={{ color: vd ? '#00ff41' : '#3a6b45' }} /> {r.upvotes}
+                                        style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', background: vd ? 'rgba(0,255,65,0.1)' : 'none', border: vd ? '1px solid rgba(0,255,65,0.25)' : 'none', borderRadius: '6px', padding: '0.2rem 0.5rem', color: vd ? '#00ff41' : '#64748b', cursor: 'pointer', fontSize: '0.78rem', fontFamily: 'JetBrains Mono' }}>
+                                        <ThumbsUp size={12} style={{ color: vd ? '#00ff41' : '#64748b' }} /> {r.upvotes}
                                     </motion.button>
                                 </div>
                                 {r.status === 'pending' && <div style={{ marginTop: '0.5rem', fontSize: '0.6rem', color: '#f59e0b', fontFamily: 'JetBrains Mono', borderTop: '1px solid rgba(245,158,11,0.15)', paddingTop: '0.4rem' }}>⏳ Pending admin approval</div>}
@@ -211,12 +211,12 @@ export default function ResourcesPage() {
                             <div style={{ padding: '2rem' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
                                     <h2 style={{ fontFamily: 'Orbitron', fontSize: '1.1rem', fontWeight: 800, color: '#e8f5e9' }}>Submit Resource</h2>
-                                    <button onClick={() => setShowSubmit(false)} style={{ background: 'none', border: 'none', color: '#3a6b45', cursor: 'pointer' }}><X size={18} /></button>
+                                    <button onClick={() => setShowSubmit(false)} style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer' }}><X size={18} /></button>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
                                     {[['TITLE', 'title', 'text', 'Name of the resource…'], ['LINK / URL', 'link', 'text', 'https://…'], ['DESCRIPTION', 'desc', 'textarea', 'Brief description…']].map(([lb, key, tp, ph]) => (
                                         <div key={key}>
-                                            <label style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>{lb}</label>
+                                            <label style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.35rem' }}>{lb}</label>
                                             {tp === 'textarea'
                                                 ? <textarea className="cyber-input" placeholder={ph} value={form[key]} onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))} style={{ minHeight: '70px', resize: 'vertical', fontFamily: 'Inter' }} />
                                                 : <input className="cyber-input" type={tp} placeholder={ph} value={form[key]} onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))} />
@@ -226,7 +226,7 @@ export default function ResourcesPage() {
                                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem' }}>
                                         {[['TYPE', 'type', RESOURCE_TYPES.slice(1)], ['CATEGORY', 'category', CATEGORIES.slice(1)], ['DIFFICULTY', 'difficulty', DIFFICULTIES.slice(1)]].map(([lb, key, opts]) => (
                                             <div key={key}>
-                                                <label style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.3rem' }}>{lb}</label>
+                                                <label style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.3rem' }}>{lb}</label>
                                                 <select className="cyber-input" value={form[key]} onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))} style={{ fontSize: '0.72rem' }}>
                                                     {opts.map(o => <option key={o}>{o}</option>)}
                                                 </select>

@@ -114,7 +114,7 @@ export default function CommunityFeedPage() {
                             Command <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Feed</span>
                         </h1>
                     </div>
-                    <p style={{ color: '#3a6b45', fontSize: '0.88rem' }}>
+                    <p style={{ color: '#64748b', fontSize: '0.88rem' }}>
                         Share insights, code, and discoveries. <span style={{ color: '#00ff41' }}>🛡️ AI threat-scans every post.</span>
                     </p>
                 </motion.div>
@@ -209,7 +209,7 @@ export default function CommunityFeedPage() {
                                                 </span>
                                             )}
                                         </div>
-                                        <div style={{ fontSize: '0.68rem', color: '#3a6b45', marginTop: '0.1rem' }}>{post.time}</div>
+                                        <div style={{ fontSize: '0.68rem', color: '#64748b', marginTop: '0.1rem' }}>{post.time}</div>
                                     </div>
                                 </div>
 
@@ -221,7 +221,7 @@ export default function CommunityFeedPage() {
                                     <div style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(0,255,65,0.1)', borderRadius: '8px', padding: '0.9rem', marginBottom: '1rem', overflowX: 'auto' }}>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.4rem' }}>
                                             <Terminal size={11} style={{ color: '#00ff41' }} />
-                                            <span style={{ fontSize: '0.6rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>code</span>
+                                            <span style={{ fontSize: '0.6rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>code</span>
                                         </div>
                                         <pre style={{ fontFamily: 'JetBrains Mono', fontSize: '0.76rem', color: '#86efac', margin: 0, whiteSpace: 'pre-wrap' }}>{post.code}</pre>
                                     </div>
@@ -260,7 +260,7 @@ export default function CommunityFeedPage() {
                                                         </div>
                                                         <div style={{ background: 'rgba(0,0,0,0.3)', borderRadius: '8px', padding: '0.55rem 0.75rem', flex: 1, border: '1px solid rgba(255,255,255,0.03)' }}>
                                                             <span style={{ fontWeight: 600, color: '#94a3b8', fontSize: '0.76rem' }}>{r.author}</span>
-                                                            <span style={{ fontSize: '0.62rem', color: '#3a6b45', marginLeft: '0.5rem' }}>{r.time}</span>
+                                                            <span style={{ fontSize: '0.62rem', color: '#64748b', marginLeft: '0.5rem' }}>{r.time}</span>
                                                             <p style={{ fontSize: '0.78rem', color: '#94a3b8', marginTop: '0.15rem', lineHeight: 1.6 }}>{r.content}</p>
                                                         </div>
                                                     </div>

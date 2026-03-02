@@ -80,7 +80,7 @@ export default function TeamsPage() {
                         <h1 style={{ fontFamily: 'Orbitron', fontSize: '1.8rem', fontWeight: 800, color: '#e8f5e9', marginBottom: '0.25rem' }}>
                             Squad <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Formation</span>
                         </h1>
-                        <p style={{ color: '#3a6b45', fontSize: '0.86rem' }}>
+                        <p style={{ color: '#64748b', fontSize: '0.86rem' }}>
                             <span style={{ color: '#00ff41' }}>Green</span> = Security teams · <span style={{ color: '#00d4ff' }}>Blue</span> = AI teams · Click a card to manage
                         </p>
                     </div>
@@ -102,13 +102,13 @@ export default function TeamsPage() {
                         <span style={{ fontFamily: 'Orbitron', fontSize: '0.9rem', fontWeight: 700, color: '#00d4ff' }}>AI Compatibility Engine</span>
                         <span style={{ fontSize: '0.62rem', background: 'rgba(0,212,255,0.08)', border: '1px solid rgba(0,212,255,0.25)', borderRadius: '4px', padding: '0.08rem 0.38rem', color: '#00d4ff', fontFamily: 'JetBrains Mono' }}>POWERED BY AI</span>
                     </div>
-                    <p style={{ fontSize: '0.8rem', color: '#3a6b45', marginBottom: '1rem' }}>Select 2+ members to get an AI compatibility score based on domain diversity and skill coverage.</p>
+                    <p style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '1rem' }}>Select 2+ members to get an AI compatibility score based on domain diversity and skill coverage.</p>
                     <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
                         {ALL_MEMBERS.map(m => {
                             const sel = compatSelected.includes(m)
                             return (
                                 <motion.button key={m} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} onClick={() => toggleMember(m)}
-                                    style={{ padding: '0.35rem 0.7rem', borderRadius: '6px', border: sel ? '1px solid rgba(0,255,65,0.5)' : '1px solid rgba(255,255,255,0.06)', background: sel ? 'rgba(0,255,65,0.1)' : 'rgba(0,0,0,0.3)', color: sel ? '#00ff41' : '#3a6b45', fontSize: '0.75rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                    style={{ padding: '0.35rem 0.7rem', borderRadius: '6px', border: sel ? '1px solid rgba(0,255,65,0.5)' : '1px solid rgba(255,255,255,0.06)', background: sel ? 'rgba(0,255,65,0.1)' : 'rgba(0,0,0,0.3)', color: sel ? '#00ff41' : '#64748b', fontSize: '0.75rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                     {sel && <Check size={10} style={{ display: 'inline', marginRight: '0.25rem' }} />}{m}
                                 </motion.button>
                             )
@@ -118,7 +118,7 @@ export default function TeamsPage() {
                         {/* Run Scan — gradient CTA */}
                         <motion.button whileHover={{ scale: 1.04, boxShadow: '0 0 20px rgba(0,255,65,0.25),0 0 40px rgba(0,212,255,0.12)' }} whileTap={{ scale: 0.96 }}
                             onClick={runScan} disabled={compatSelected.length < 2}
-                            style={{ padding: '0.55rem 1.2rem', background: compatSelected.length >= 2 ? 'linear-gradient(135deg,#00ff41,#00d4ff)' : 'rgba(0,0,0,0.3)', border: compatSelected.length >= 2 ? 'none' : '1px solid rgba(100,116,139,0.1)', borderRadius: '7px', color: compatSelected.length >= 2 ? '#020d04' : '#3a6b45', fontFamily: 'Orbitron', fontWeight: 700, fontSize: '0.76rem', cursor: compatSelected.length >= 2 ? 'pointer' : 'not-allowed', letterSpacing: '0.04em' }}>
+                            style={{ padding: '0.55rem 1.2rem', background: compatSelected.length >= 2 ? 'linear-gradient(135deg,#00ff41,#00d4ff)' : 'rgba(0,0,0,0.3)', border: compatSelected.length >= 2 ? 'none' : '1px solid rgba(100,116,139,0.1)', borderRadius: '7px', color: compatSelected.length >= 2 ? '#020d04' : '#64748b', fontFamily: 'Orbitron', fontWeight: 700, fontSize: '0.76rem', cursor: compatSelected.length >= 2 ? 'pointer' : 'not-allowed', letterSpacing: '0.04em' }}>
                             {scanning ? '⟳ SCANNING…' : '⚡ RUN SCAN'}
                         </motion.button>
                         {compatScore !== null && !scanning && (
@@ -127,14 +127,14 @@ export default function TeamsPage() {
                                     <ScoreRing score={compatScore} color={compatScore >= 80 ? '#00ff41' : '#00d4ff'} />
                                     <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                                         <span style={{ fontFamily: 'Orbitron', fontWeight: 900, fontSize: '1rem', color: compatScore >= 80 ? '#00ff41' : '#00d4ff' }}>{compatScore}</span>
-                                        <span style={{ fontSize: '0.52rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>SCORE</span>
+                                        <span style={{ fontSize: '0.52rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>SCORE</span>
                                     </div>
                                 </div>
                                 <div>
                                     <div style={{ fontFamily: 'Orbitron', fontWeight: 700, color: compatScore >= 80 ? '#00ff41' : '#00d4ff', fontSize: '0.88rem' }}>
                                         {compatScore >= 85 ? 'Excellent Match!' : compatScore >= 70 ? 'Good Compatibility' : 'Average Match'}
                                     </div>
-                                    <div style={{ fontSize: '0.72rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginTop: '0.15rem' }}>Domain Coverage · Skill Overlap · Balance</div>
+                                    <div style={{ fontSize: '0.72rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginTop: '0.15rem' }}>Domain Coverage · Skill Overlap · Balance</div>
                                 </div>
                             </motion.div>
                         )}
@@ -164,13 +164,13 @@ export default function TeamsPage() {
                                             {team.tags.map(t => <span key={t} style={{ fontSize: '0.6rem', color: col.primary, background: col.secondary, border: `1px solid ${col.border}`, borderRadius: '3px', padding: '0.07rem 0.3rem', fontFamily: 'JetBrains Mono' }}>#{t}</span>)}
                                         </div>
                                         <h3 style={{ fontFamily: 'Orbitron', fontSize: '0.95rem', fontWeight: 700, color: '#e8f5e9', marginBottom: '0.35rem' }}>{team.name}</h3>
-                                        <p style={{ fontSize: '0.78rem', color: '#3a6b45', lineHeight: 1.6, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{team.desc}</p>
+                                        <p style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.6, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{team.desc}</p>
                                     </div>
                                     <div style={{ position: 'relative', width: '64px', height: '64px', flexShrink: 0 }}>
                                         <ScoreRing score={team.score} color={col.primary} />
                                         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                                             <span style={{ fontFamily: 'Orbitron', fontWeight: 900, fontSize: '0.88rem', color: col.primary }}>{team.score}</span>
-                                            <span style={{ fontSize: '0.46rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>SCORE</span>
+                                            <span style={{ fontSize: '0.46rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>SCORE</span>
                                         </div>
                                     </div>
                                 </div>
@@ -190,13 +190,13 @@ export default function TeamsPage() {
                                             </div>
                                         )
                                     })}
-                                    <div style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginLeft: '0.2rem' }}>
+                                    <div style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginLeft: '0.2rem' }}>
                                         {team.members.length}/{team.maxMembers}
                                     </div>
                                 </div>
 
                                 {/* Event */}
-                                <div style={{ fontSize: '0.7rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                                <div style={{ fontSize: '0.7rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                                     <Zap size={10} style={{ color: col.primary }} /> {team.event}
                                 </div>
 
@@ -205,7 +205,7 @@ export default function TeamsPage() {
                                     {open && (
                                         <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
                                             style={{ borderTop: `1px solid ${col.border}`, paddingTop: '0.9rem', marginTop: '0.1rem' }} onClick={e => e.stopPropagation()}>
-                                            <div style={{ fontSize: '0.68rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', marginBottom: '0.6rem', letterSpacing: '0.08em' }}>MEMBERS</div>
+                                            <div style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'JetBrains Mono', marginBottom: '0.6rem', letterSpacing: '0.08em' }}>MEMBERS</div>
                                             {team.members.map(m => {
                                                 const mc = memberAvatarColor(m.domain)
                                                 const isLeader = m.role === 'leader'
@@ -242,7 +242,7 @@ export default function TeamsPage() {
                                     </div>
                                 )}
                                 {full && !myReq && (
-                                    <div style={{ width: '100%', padding: '0.55rem', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(100,116,139,0.1)', borderRadius: '7px', color: '#3a6b45', fontFamily: 'JetBrains Mono', fontSize: '0.76rem', textAlign: 'center', marginTop: '0.75rem' }}>
+                                    <div style={{ width: '100%', padding: '0.55rem', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(100,116,139,0.1)', borderRadius: '7px', color: '#64748b', fontFamily: 'JetBrains Mono', fontSize: '0.76rem', textAlign: 'center', marginTop: '0.75rem' }}>
                                         Team Full
                                     </div>
                                 )}
@@ -263,32 +263,32 @@ export default function TeamsPage() {
                             <div style={{ padding: '2rem' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                                     <h2 style={{ fontFamily: 'Orbitron', fontSize: '1.2rem', fontWeight: 800, color: '#e8f5e9' }}>Create Team</h2>
-                                    <button onClick={() => setShowCreate(false)} style={{ background: 'none', border: 'none', color: '#3a6b45', cursor: 'pointer' }}><X size={18} /></button>
+                                    <button onClick={() => setShowCreate(false)} style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer' }}><X size={18} /></button>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                     <div>
-                                        <label style={{ fontSize: '0.72rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>TEAM NAME</label>
+                                        <label style={{ fontSize: '0.72rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>TEAM NAME</label>
                                         <input className="cyber-input" placeholder="Zero Day Crafters…" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} />
                                     </div>
                                     <div>
-                                        <label style={{ fontSize: '0.72rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>DESCRIPTION</label>
+                                        <label style={{ fontSize: '0.72rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>DESCRIPTION</label>
                                         <textarea className="cyber-input" placeholder="What's your team's mission?" value={form.desc} onChange={e => setForm(f => ({ ...f, desc: e.target.value }))} style={{ minHeight: '70px', resize: 'vertical', fontFamily: 'Inter' }} />
                                     </div>
                                     <div>
-                                        <label style={{ fontSize: '0.72rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>TARGET EVENT</label>
+                                        <label style={{ fontSize: '0.72rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>TARGET EVENT</label>
                                         <select className="cyber-input" value={form.event} onChange={e => setForm(f => ({ ...f, event: e.target.value }))}>
                                             <option value="">Select event…</option>
                                             {EVENTS.map(e => <option key={e}>{e}</option>)}
                                         </select>
                                     </div>
                                     <div>
-                                        <label style={{ fontSize: '0.72rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>INVITE MEMBERS</label>
+                                        <label style={{ fontSize: '0.72rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>INVITE MEMBERS</label>
                                         <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
                                             {ALL_MEMBERS.map(m => {
                                                 const sel = form.members.includes(m)
                                                 return (
                                                     <button key={m} onClick={() => setForm(f => ({ ...f, members: sel ? f.members.filter(x => x !== m) : [...f.members, m] }))}
-                                                        style={{ padding: '0.3rem 0.6rem', borderRadius: '5px', border: sel ? '1px solid rgba(0,212,255,0.4)' : '1px solid rgba(100,116,139,0.1)', background: sel ? 'rgba(0,212,255,0.1)' : 'rgba(0,0,0,0.2)', color: sel ? '#00d4ff' : '#3a6b45', fontSize: '0.72rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                                        style={{ padding: '0.3rem 0.6rem', borderRadius: '5px', border: sel ? '1px solid rgba(0,212,255,0.4)' : '1px solid rgba(100,116,139,0.1)', background: sel ? 'rgba(0,212,255,0.1)' : 'rgba(0,0,0,0.2)', color: sel ? '#00d4ff' : '#64748b', fontSize: '0.72rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                                         {sel && <Check size={9} style={{ display: 'inline', marginRight: '0.2rem' }} />}{m}
                                                     </button>
                                                 )

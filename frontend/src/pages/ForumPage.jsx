@@ -82,7 +82,7 @@ export default function ForumPage() {
                                 <h1 style={{ fontFamily: 'Orbitron', fontSize: '1.8rem', fontWeight: 800, color: '#e8f5e9' }}>
                                     Command <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Forum</span>
                                 </h1>
-                                <p style={{ color: '#3a6b45', fontSize: '0.85rem', marginTop: '0.2rem' }}>Ask questions · Share writeups · Discuss ideas</p>
+                                <p style={{ color: '#64748b', fontSize: '0.85rem', marginTop: '0.2rem' }}>Ask questions · Share writeups · Discuss ideas</p>
                             </div>
                             <motion.button whileHover={{ scale: 1.04, boxShadow: '0 0 30px rgba(0,255,65,0.3),0 0 60px rgba(0,212,255,0.15)' }} whileTap={{ scale: 0.96 }}
                                 onClick={() => setShowCreate(true)}
@@ -94,7 +94,7 @@ export default function ForumPage() {
 
                     {/* Search */}
                     <div style={{ position: 'relative', marginBottom: '1.25rem' }}>
-                        <Search size={14} style={{ position: 'absolute', left: '0.9rem', top: '50%', transform: 'translateY(-50%)', color: '#3a6b45' }} />
+                        <Search size={14} style={{ position: 'absolute', left: '0.9rem', top: '50%', transform: 'translateY(-50%)', color: '#64748b' }} />
                         <input className="cyber-input" placeholder="Search posts, questions, writeups…" value={search} onChange={e => setSearch(e.target.value)} style={{ paddingLeft: '2.2rem' }} />
                     </div>
 
@@ -105,7 +105,7 @@ export default function ForumPage() {
                             const active = category === c
                             return (
                                 <button key={c} onClick={() => setCategory(c)}
-                                    style={{ padding: '0.38rem 0.75rem', borderRadius: '6px', border: active ? `1px solid ${col.c}50` : '1px solid rgba(100,116,139,0.1)', background: active ? col.bg : 'rgba(0,0,0,0.2)', color: active ? col.c : '#3a6b45', fontSize: '0.73rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                    style={{ padding: '0.38rem 0.75rem', borderRadius: '6px', border: active ? `1px solid ${col.c}50` : '1px solid rgba(100,116,139,0.1)', background: active ? col.bg : 'rgba(0,0,0,0.2)', color: active ? col.c : '#64748b', fontSize: '0.73rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                     {c}
                                 </button>
                             )
@@ -116,7 +116,7 @@ export default function ForumPage() {
                     <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
                         {ALL_TAGS.map(tag => (
                             <button key={tag} onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-                                style={{ padding: '0.25rem 0.55rem', borderRadius: '4px', border: selectedTag === tag ? '1px solid rgba(0,212,255,0.4)' : '1px solid rgba(100,116,139,0.08)', background: selectedTag === tag ? 'rgba(0,212,255,0.07)' : 'transparent', color: selectedTag === tag ? '#00d4ff' : '#3a6b45', fontSize: '0.68rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                style={{ padding: '0.25rem 0.55rem', borderRadius: '4px', border: selectedTag === tag ? '1px solid rgba(0,212,255,0.4)' : '1px solid rgba(100,116,139,0.08)', background: selectedTag === tag ? 'rgba(0,212,255,0.07)' : 'transparent', color: selectedTag === tag ? '#00d4ff' : '#64748b', fontSize: '0.68rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                 #{tag}
                             </button>
                         ))}
@@ -153,16 +153,16 @@ export default function ForumPage() {
                                             <p style={{ fontSize: '0.82rem', color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.75rem', display: '-webkit-box', WebkitLineClamp: open ? 100 : 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{post.body}</p>
 
                                             <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
-                                                {post.tags.map(t => <span key={t} style={{ fontSize: '0.6rem', color: '#3a6b45', background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(100,116,139,0.1)', borderRadius: '3px', padding: '0.06rem 0.3rem', fontFamily: 'JetBrains Mono' }}>#{t}</span>)}
+                                                {post.tags.map(t => <span key={t} style={{ fontSize: '0.6rem', color: '#64748b', background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(100,116,139,0.1)', borderRadius: '3px', padding: '0.06rem 0.3rem', fontFamily: 'JetBrains Mono' }}>#{t}</span>)}
                                             </div>
 
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.72rem', color: '#3a6b45', flexWrap: 'wrap' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.72rem', color: '#64748b', flexWrap: 'wrap' }}>
                                                 <span>{post.author} · {post.time}</span>
                                                 <button onClick={() => setExpanded(open ? null : post.id)} style={{ background: 'none', border: 'none', color: '#00d4ff', cursor: 'pointer', fontSize: '0.72rem', display: 'flex', alignItems: 'center', gap: '0.25rem', fontFamily: 'JetBrains Mono' }}>
                                                     <MessageSquare size={11} /> {post.replies.length} {open ? <ChevronUp size={10} /> : <ChevronDown size={10} />}
                                                 </button>
-                                                <button onClick={() => toggleBookmark(post.id)} style={{ background: 'none', border: 'none', color: bm ? '#f59e0b' : '#3a6b45', cursor: 'pointer' }}><Bookmark size={12} /></button>
-                                                <button style={{ background: 'none', border: 'none', color: '#3a6b45', cursor: 'pointer' }}><Flag size={11} /></button>
+                                                <button onClick={() => toggleBookmark(post.id)} style={{ background: 'none', border: 'none', color: bm ? '#f59e0b' : '#64748b', cursor: 'pointer' }}><Bookmark size={12} /></button>
+                                                <button style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer' }}><Flag size={11} /></button>
                                             </div>
 
                                             {/* Replies */}
@@ -175,7 +175,7 @@ export default function ForumPage() {
                                                                 <div style={{ width: '30px', height: '30px', borderRadius: '50%', background: 'linear-gradient(135deg,#00d4ff,#0096cc)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.6rem', fontWeight: 700, color: '#020d04', flexShrink: 0 }}>{r.av}</div>
                                                                 <div style={{ flex: 1, background: r.accepted ? 'rgba(0,255,65,0.04)' : 'rgba(0,0,0,0.25)', border: r.accepted ? '1px solid rgba(0,255,65,0.2)' : '1px solid rgba(255,255,255,0.03)', borderRadius: '8px', padding: '0.7rem 0.9rem' }}>
                                                                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-                                                                        <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#e8f5e9' }}>{r.author} <span style={{ color: '#3a6b45', fontWeight: 400 }}>· {r.time}</span></span>
+                                                                        <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#e8f5e9' }}>{r.author} <span style={{ color: '#64748b', fontWeight: 400 }}>· {r.time}</span></span>
                                                                         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                                                                             {r.accepted && <span style={{ fontSize: '0.6rem', color: '#00ff41', fontFamily: 'JetBrains Mono' }}>✅ Accepted</span>}
                                                                             {post.type === 'question' && !r.accepted && post.accepted === null && (
@@ -184,7 +184,7 @@ export default function ForumPage() {
                                                                         </div>
                                                                     </div>
                                                                     <p style={{ fontSize: '0.8rem', color: '#94a3b8', lineHeight: 1.65 }}>{r.body}</p>
-                                                                    <div style={{ marginTop: '0.35rem', fontSize: '0.68rem', color: '#3a6b45', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                                                                    <div style={{ marginTop: '0.35rem', fontSize: '0.68rem', color: '#64748b', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
                                                                         <ThumbsUp size={10} style={{ color: '#00ff41' }} /> {r.upvotes}
                                                                     </div>
                                                                 </div>
@@ -220,7 +220,7 @@ export default function ForumPage() {
                                     <div style={{ fontSize: '0.78rem', color: '#e8f5e9', marginBottom: '0.2rem', lineHeight: 1.3 }}>{t.title}</div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                                         <span style={{ fontSize: '0.62rem', color: col.c, background: col.bg, border: `1px solid ${col.border}`, borderRadius: '3px', padding: '0.05rem 0.3rem', fontFamily: 'JetBrains Mono' }}>{t.cat}</span>
-                                        <span style={{ fontSize: '0.62rem', color: '#3a6b45', fontFamily: 'JetBrains Mono' }}>▲ {t.votes}</span>
+                                        <span style={{ fontSize: '0.62rem', color: '#64748b', fontFamily: 'JetBrains Mono' }}>▲ {t.votes}</span>
                                     </div>
                                 </div>
                             )
@@ -235,7 +235,7 @@ export default function ForumPage() {
                         </div>
                         <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
                             {ALL_TAGS.map(tag => (
-                                <button key={tag} onClick={() => setSelectedTag(selectedTag === tag ? null : tag)} style={{ padding: '0.25rem 0.5rem', borderRadius: '4px', border: selectedTag === tag ? '1px solid rgba(0,255,65,0.4)' : '1px solid rgba(0,255,65,0.1)', background: selectedTag === tag ? 'rgba(0,255,65,0.08)' : 'transparent', color: selectedTag === tag ? '#00ff41' : '#3a6b45', fontSize: '0.65rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>#{tag}</button>
+                                <button key={tag} onClick={() => setSelectedTag(selectedTag === tag ? null : tag)} style={{ padding: '0.25rem 0.5rem', borderRadius: '4px', border: selectedTag === tag ? '1px solid rgba(0,255,65,0.4)' : '1px solid rgba(0,255,65,0.1)', background: selectedTag === tag ? 'rgba(0,255,65,0.08)' : 'transparent', color: selectedTag === tag ? '#00ff41' : '#64748b', fontSize: '0.65rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>#{tag}</button>
                             ))}
                         </div>
                     </motion.div>
@@ -253,37 +253,37 @@ export default function ForumPage() {
                             <div style={{ padding: '2rem' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                                     <h2 style={{ fontFamily: 'Orbitron', fontSize: '1.15rem', fontWeight: 800, color: '#e8f5e9' }}>New Post</h2>
-                                    <button onClick={() => setShowCreate(false)} style={{ background: 'none', border: 'none', color: '#3a6b45', cursor: 'pointer' }}><X size={18} /></button>
+                                    <button onClick={() => setShowCreate(false)} style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer' }}><X size={18} /></button>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                     <div style={{ display: 'flex', gap: '0.5rem' }}>
                                         {['question', 'discussion'].map(t => (
                                             <button key={t} onClick={() => setForm(f => ({ ...f, type: t }))}
-                                                style={{ flex: 1, padding: '0.55rem', borderRadius: '7px', border: form.type === t ? '1px solid rgba(0,212,255,0.4)' : '1px solid rgba(100,116,139,0.1)', background: form.type === t ? 'rgba(0,212,255,0.08)' : 'rgba(0,0,0,0.2)', color: form.type === t ? '#00d4ff' : '#3a6b45', fontFamily: 'JetBrains Mono', fontSize: '0.75rem', cursor: 'pointer' }}>
+                                                style={{ flex: 1, padding: '0.55rem', borderRadius: '7px', border: form.type === t ? '1px solid rgba(0,212,255,0.4)' : '1px solid rgba(100,116,139,0.1)', background: form.type === t ? 'rgba(0,212,255,0.08)' : 'rgba(0,0,0,0.2)', color: form.type === t ? '#00d4ff' : '#64748b', fontFamily: 'JetBrains Mono', fontSize: '0.75rem', cursor: 'pointer' }}>
                                                 {t === 'question' ? '❓ Question' : '💬 Discussion'}
                                             </button>
                                         ))}
                                     </div>
                                     <div>
-                                        <label style={{ fontSize: '0.7rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>TITLE</label>
+                                        <label style={{ fontSize: '0.7rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>TITLE</label>
                                         <input className="cyber-input" placeholder="What are you asking or sharing?" value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} />
                                     </div>
                                     <div>
-                                        <label style={{ fontSize: '0.7rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>BODY</label>
+                                        <label style={{ fontSize: '0.7rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>BODY</label>
                                         <textarea className="cyber-input" placeholder="Describe your question or share your insights…" value={form.body} onChange={e => setForm(f => ({ ...f, body: e.target.value }))} style={{ minHeight: '120px', resize: 'vertical', fontFamily: 'Inter' }} />
                                     </div>
                                     <div>
-                                        <label style={{ fontSize: '0.7rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>CATEGORY</label>
+                                        <label style={{ fontSize: '0.7rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>CATEGORY</label>
                                         <select className="cyber-input" value={form.category} onChange={e => setForm(f => ({ ...f, category: e.target.value }))}>
                                             {CATEGORIES.filter(c => c !== 'All').map(c => <option key={c}>{c}</option>)}
                                         </select>
                                     </div>
                                     <div>
-                                        <label style={{ fontSize: '0.7rem', color: '#3a6b45', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>TAGS</label>
+                                        <label style={{ fontSize: '0.7rem', color: '#64748b', fontFamily: 'JetBrains Mono', display: 'block', marginBottom: '0.4rem' }}>TAGS</label>
                                         <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap' }}>
                                             {ALL_TAGS.map(t => (
                                                 <button key={t} onClick={() => setForm(f => ({ ...f, tags: f.tags.includes(t) ? f.tags.filter(x => x !== t) : [...f.tags, t] }))}
-                                                    style={{ padding: '0.25rem 0.5rem', borderRadius: '4px', border: form.tags.includes(t) ? '1px solid rgba(0,255,65,0.4)' : '1px solid rgba(100,116,139,0.1)', background: form.tags.includes(t) ? 'rgba(0,255,65,0.08)' : 'transparent', color: form.tags.includes(t) ? '#00ff41' : '#3a6b45', fontSize: '0.68rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
+                                                    style={{ padding: '0.25rem 0.5rem', borderRadius: '4px', border: form.tags.includes(t) ? '1px solid rgba(0,255,65,0.4)' : '1px solid rgba(100,116,139,0.1)', background: form.tags.includes(t) ? 'rgba(0,255,65,0.08)' : 'transparent', color: form.tags.includes(t) ? '#00ff41' : '#64748b', fontSize: '0.68rem', cursor: 'pointer', fontFamily: 'JetBrains Mono' }}>
                                                     #{t}
                                                 </button>
                                             ))}
