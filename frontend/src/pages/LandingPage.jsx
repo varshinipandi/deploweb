@@ -367,8 +367,8 @@ export default function LandingPage() {
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                     <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.68rem', color: '#3a6b45', letterSpacing: '0.2em', marginBottom: '1rem' }}>// TAKE ACTION</div>
                     <h2 style={{ fontFamily: 'Orbitron', fontSize: 'clamp(1.5rem,4vw,2.2rem)', fontWeight: 900, color: '#e8f5e9', marginBottom: '1rem' }}>
-                        Ready to Go{' '}
-                        <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Antigravity?</span>
+                        Ready to{' '}
+                        <span style={{ background: 'linear-gradient(135deg,#00ff41,#00d4ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Go?</span>
                     </h2>
                     <p style={{ color: '#3a6b45', maxWidth: '480px', margin: '0 auto 2.2rem', fontSize: '0.95rem', lineHeight: 1.7 }}>
                         Join the community eliminating digital gravity from AI × Cybersecurity collaboration.
